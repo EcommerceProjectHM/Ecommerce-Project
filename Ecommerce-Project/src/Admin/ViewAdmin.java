@@ -82,6 +82,7 @@ public class ViewAdmin implements IViewAdmin
 	}
 	public void removeproducts() throws SQLException
 	{
+		@SuppressWarnings("resource")
 		Scanner scannerObject = new Scanner(System.in);
 		IViewList viewlist = new ViewList();
 		viewlist.setPresenter(new PresenterList(viewlist,new ModelList()));

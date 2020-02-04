@@ -26,6 +26,7 @@ public class ViewList implements IViewList
 			}
 
 			System.out.println("Please select the S_no if you interest");
+			@SuppressWarnings("resource")
 			Scanner scannerObject = new Scanner(System.in);
 			int category = scannerObject.nextInt();
 			Object productlist = presenterlist.categoryS_No(al.get(category - 1).toString());

@@ -9,8 +9,8 @@ public class PresenterList implements IPresenterList
 
 	public PresenterList(IViewList view, IModelList model) 
 	{
-		this.modellist=model;
-		this.viewlist=view;
+		this.modellist = model;
+		this.viewlist = view;
 	}
 	
 	public Object category() throws SQLException
