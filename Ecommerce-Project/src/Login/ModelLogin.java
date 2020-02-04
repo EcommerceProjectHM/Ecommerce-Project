@@ -2,6 +2,15 @@ package Login;
 
 import java.sql.Statement;
 
+import Admin.IViewAdmin;
+import Admin.ModelAdmin;
+import Admin.PresenterAdmin;
+import Admin.ViewAdmin;
+import Customer.IViewCustomer;
+import Customer.ModelCustomer;
+import Customer.PresenterCustomer;
+import Customer.ViewCustomer;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -37,17 +46,17 @@ public class ModelLogin implements IModelLogin
 			    if(name.equals(this.username) && password.equals(this.password)) 
 			    {
 			    	System.out.println("Login Successfully");
-//				    if(username.contains("@admin"))
-//				    {
-//				    	IViewAdmin viewadmin = new ViewAdmin();
-//						viewadmin.setPresenter(new PresenterAdmin(viewadmin,new ModelAdmin()));
-//						
-//				    }
-//				    else
-//				    {
-//						IViewCustomer view = new ViewCustomer(username);
-//						view.setPresenter(new PresenterCustomer(view,new ModelCustomer()));
-//				    }
+				    if(username.contains("@admin"))
+				    {
+				    	IViewAdmin viewadmin = new ViewAdmin();
+						viewadmin.setPresenter(new PresenterAdmin(viewadmin,new ModelAdmin()));
+						
+				    }
+				    else
+				    {
+						IViewCustomer view = new ViewCustomer(username);
+						view.setPresenter(new PresenterCustomer(view,new ModelCustomer()));
+				    }
 			    	result = "Thank You!";
 				   break;
 			    }

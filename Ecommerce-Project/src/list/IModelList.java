@@ -4,6 +4,6 @@ import java.sql.SQLException;
 
 public interface IModelList 
 {
-Object category() throws SQLException ;
-Object productlist(String i) throws SQLException;	
+	Object category() throws SQLException ;
+	Object productlist(String i) throws SQLException;	
 }

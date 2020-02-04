@@ -1,6 +1,5 @@
 package Admin;
 
-
 import java.sql.SQLException;
 
 public interface IModelAdmin 
