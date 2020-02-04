@@ -7,5 +7,8 @@ public interface IModelCustomer {
 	public String addcart(int product_id,String customer) throws SQLException;
 	public Object showcart(String Customer_Name) throws SQLException;
 	public String removecart(int S_No) throws SQLException;
+	
+	
+	
 }
 
