@@ -67,9 +67,9 @@ public class ViewList implements IViewList
 			{
 				Object productlist = presenterlist.categoryS_No(category_name.get(category - 1).toString());
 				System.out.println("\nProduct Details :");
-				System.out.println("------------------------------------------------");
+				System.out.println("-------------------------------------------------");
 				System.out.println("S_No " + "Product_Name  " + "Product_Description  " + "Price ");
-				System.out.println("------------------------------------------------");
+				System.out.println("-------------------------------------------------");
 
 				while (((ResultSet) productlist).next()) 
 				{
@@ -80,7 +80,7 @@ public class ViewList implements IViewList
 					System.out.println(S_No + "   " + Product_Name + "        " + Product_Description + "       " + Price);
 					this.productS_No.add(S_No);
 				}
-				System.out.println("------------------------------------------------");
+				System.out.println("-------------------------------------------------");
 			}
 		}
 		

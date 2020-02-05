@@ -75,7 +75,7 @@ public class ViewCustomer implements IViewCustomer
 			 case 1:{
 					 System.out.println("Enter the S_No if you want to remove");
 					 S_No = scannerObject.nextInt();
-					 System.out.println(presentercustomer.removecart(S_No));break;
+					 System.out.println(presentercustomer.removecart(S_No)); break;
 				    }
 			 case 2:{
 					 System.out.println("Enter the S_No if you want to buy");

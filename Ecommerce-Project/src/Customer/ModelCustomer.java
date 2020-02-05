@@ -22,7 +22,7 @@ public class ModelCustomer implements IModelCustomer
 			quantity = Integer.parseInt(ss.getString("Qty").toString());
 		}
 
-		if (givenPrice >= price * givenQuantity) 
+		if (givenPrice >= price * givenQuantity)
 		{
 			if (quantity >= givenQuantity) 
 			{
@@ -35,7 +35,6 @@ public class ModelCustomer implements IModelCustomer
 		} 
 		else
 			return  "Low balance";
-
 	}
 
 	public String addcart(int product_id, String Customer_name) throws SQLException 
@@ -57,7 +56,7 @@ public class ModelCustomer implements IModelCustomer
 			Product_Description = ss.getString("Product_Description").toString();
 		}
 		
-		s1.execute("insert into cart values (" + product_id + ",'" + Customer_name + "','" + Product_Name + "','"
+		s1.execute("insert into cart values (" + product_id + ",'" + Customer_name + "','" +  Product_Name + "','"
 				+ Category_Name + "','" + Product_Description + "'," + price + ")");
 		return "Product added successfully";
 	}
@@ -77,4 +76,5 @@ public class ModelCustomer implements IModelCustomer
 		s1.executeUpdate("delete from cart where S_No=" + S_No);
 		return "product removed sucessfully";
 	}
+	
 }

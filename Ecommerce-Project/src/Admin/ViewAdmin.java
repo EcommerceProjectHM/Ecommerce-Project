@@ -78,7 +78,7 @@ public class ViewAdmin implements IViewAdmin
 		    case 3:
 		    	{
 			    	al.removeAll(al);al.clear();
-			    	addproducts();break;
+			    	addproducts(); break;
 		    	}
 		}
 		scannerObject.close();showdetails();	
