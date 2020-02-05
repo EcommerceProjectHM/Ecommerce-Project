@@ -39,10 +39,9 @@ public class ViewCustomer implements IViewCustomer
 			case 1: customer();break; 
 			case 2: cartdetails();break; 
 			case 3: {
-				System.out.println("Thank You!\n");
-				ViewLogin view = new ViewLogin();
-				view.setPresenter(new PresenterLogin(view,new ModelLogin()));
-				break;
+						System.out.println("Thank You!\n");
+						ViewLogin view = new ViewLogin();
+						view.setPresenter(new PresenterLogin(view,new ModelLogin())); break;
 			        }
 			default : System.out.println("\nPlease Enter Valid Number");
 					  showdetails();
@@ -87,7 +86,6 @@ public class ViewCustomer implements IViewCustomer
 			 showdetails();
 	}
 	
-	
 	public  void customer() throws SQLException
 	{   
         System.out.println("\nThe following category products are avilable");
@@ -113,8 +111,8 @@ public class ViewCustomer implements IViewCustomer
 			  		  		continue;
 				}
 			}
-			
 	}
+	
 	public  void buy(int product_Id) throws SQLException 
 	{
 		 @SuppressWarnings("resource")
@@ -129,6 +127,7 @@ public class ViewCustomer implements IViewCustomer
         System.out.println("Thank You "+this.username);
         showdetails();
 	}
+	
 	public void addToCart(int product_id) throws SQLException
 	{
 		String customer = this.username;
@@ -146,10 +145,7 @@ public class ViewCustomer implements IViewCustomer
 				case 3: showdetails();break;
 				default : System.out.println("\nPlease Enter Valid Number");
 				  		  continue;
-				
 			}	
 		}
-		
-		
 	}
 }

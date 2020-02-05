@@ -37,6 +37,7 @@ public class ViewAdmin implements IViewAdmin
 			case 4:System.exit(0);;
 		}
 	}
+	
 	public void addproducts() throws SQLException
 	{
 		Scanner scannerObject = new Scanner(System.in);
@@ -65,7 +66,7 @@ public class ViewAdmin implements IViewAdmin
 			case 2:
 				try 
 				{
-						System.out.println(presenteradmin.addproducts(al));
+					System.out.println(presenteradmin.addproducts(al));
 				} 
 				catch (SQLException e) 
 				{
@@ -82,6 +83,7 @@ public class ViewAdmin implements IViewAdmin
 		}
 		scannerObject.close();showdetails();	
 	}
+	
 	public void removeproducts() throws SQLException
 	{
 		IViewList viewlist = new ViewList();
@@ -91,16 +93,11 @@ public class ViewAdmin implements IViewAdmin
 		System.out.println(presenteradmin.removeProducts(S_No));
 		showdetails();	
 	}
+	
 	public void viewproducts() throws SQLException
 	{
 		IViewList viewlist = new ViewList();
 		viewlist.setPresenter(new PresenterList(viewlist,new ModelList()));
 		showdetails();
 	}
-	
-//	public static void main(String args[]) throws SQLException 
-//	{
-//		IViewAdmin viewadmin = new ViewAdmin();
-//		viewadmin.setPresenter(new PresenterAdmin(viewadmin,new ModelAdmin()));
-//	}
 }

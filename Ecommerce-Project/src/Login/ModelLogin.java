@@ -79,7 +79,6 @@ public class ModelLogin implements IModelLogin
 			ResultSet rs = s1.executeQuery("select * from login");
 			
 			String result = "false";
-			
 			while(rs.next())
 			{
 				String name  = rs.getString("User_Name");

@@ -18,7 +18,7 @@ public class ViewList implements IViewList
 		int number = scannerObject.nextInt();
 		for (int i = 0; i < this.productS_No.size(); i++) 
 		{
-			if (number == (int) Integer.parseInt(this.productS_No.get(i).toString()))
+			if (number == (int)Integer.parseInt(this.productS_No.get(i).toString()))
 			{
 				return number;
 			}

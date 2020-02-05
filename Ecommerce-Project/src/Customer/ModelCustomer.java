@@ -32,7 +32,6 @@ public class ModelCustomer implements IModelCustomer
 			} 
 			else
 				return "Only " + quantity + " are avilable";
-
 		} 
 		else
 			return "Low balance";
