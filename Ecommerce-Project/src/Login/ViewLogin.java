@@ -29,10 +29,10 @@ public class ViewLogin implements IViewLogin
 	{
 		@SuppressWarnings("resource")
 		Scanner sc1 = new Scanner(System.in);
-		System.out.print("Sign in Press ---> 1");
-		System.out.print("Sign Up Press ---> 2");
-		System.out.print("Account Delete Press ---> 3");
-		System.out.print("Exit Application Press ---> 4");
+		System.out.println("Sign in Press ---> 1");
+		System.out.println("Sign Up Press ---> 2");
+		System.out.println("Account Delete Press ---> 3");
+		System.out.println("Exit Application Press ---> 4");
 		int option = sc1.nextInt();
 
 		switch(option)
