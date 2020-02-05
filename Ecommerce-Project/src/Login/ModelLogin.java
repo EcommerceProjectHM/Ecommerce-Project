@@ -50,7 +50,6 @@ public class ModelLogin implements IModelLogin
 				    {
 				    	IViewAdmin viewadmin = new ViewAdmin();
 						viewadmin.setPresenter(new PresenterAdmin(viewadmin,new ModelAdmin()));
-						
 				    }
 				    else
 				    {

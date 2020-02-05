@@ -29,11 +29,12 @@ public class ViewLogin implements IViewLogin
 	{
 		@SuppressWarnings("resource")
 		Scanner sc1 = new Scanner(System.in);
-		System.out.println("Sign in Press ---> 1");
-		System.out.println("Sign Up Press ---> 2");
-		System.out.println("Account Delete Press ---> 3");
+		System.out.print("Sign in Press ---> 1");
+		System.out.print("Sign Up Press ---> 2");
+		System.out.print("Account Delete Press ---> 3");
+		System.out.print("Exit Application Press ---> 4");
 		int option = sc1.nextInt();
-		
+
 		switch(option)
 		{
 			case 1 : userlogin(); break;
@@ -44,7 +45,7 @@ public class ViewLogin implements IViewLogin
 					catch (SQLException e)
 					{
 						e.printStackTrace();
-					}
+					} break;
 			case 3 : try 
 					{
 						delete_account();
@@ -52,6 +53,12 @@ public class ViewLogin implements IViewLogin
 					catch (SQLException e) 
 					{
 						e.printStackTrace();
+					} break;
+			case 4 : System.exit(0); break;
+			default : 
+					{
+						System.out.println("\nPlease Enter Valid Number");
+						homepage();
 					}
 		}
 	}

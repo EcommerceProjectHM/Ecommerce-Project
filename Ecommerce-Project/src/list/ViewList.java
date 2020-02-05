@@ -32,6 +32,7 @@ public class ViewList implements IViewList
 			@SuppressWarnings("resource")
 			Scanner scannerObject = new Scanner(System.in);
 			int category = scannerObject.nextInt();
+			
 			if(al.size() >= category);
 			else
 			{
