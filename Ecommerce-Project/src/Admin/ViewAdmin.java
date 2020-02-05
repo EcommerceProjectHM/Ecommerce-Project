@@ -69,7 +69,9 @@ public class ViewAdmin implements IViewAdmin
 				} 
 				catch (SQLException e) 
 				{
+					
 					e.printStackTrace();
+					
 				}
 				break;
 		    case 3:

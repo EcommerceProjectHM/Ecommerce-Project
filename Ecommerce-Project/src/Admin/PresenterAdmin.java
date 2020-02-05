@@ -11,6 +11,7 @@ public class PresenterAdmin implements IPresenterAdmin
 	{
 		this.modeladmin = model;
 		this.viewadmin = view;
+		
 	}
 	
 	public String addproducts(Object details) throws SQLException

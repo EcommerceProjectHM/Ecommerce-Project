@@ -25,5 +25,6 @@ public class ModelAdmin implements IModelAdmin
 		Statement s1 = c.createStatement();
 		s1.executeUpdate("delete from ProductsDetails where S_No="+S_No);
 		return "Product removed successfully";
+		
 	}
 }
