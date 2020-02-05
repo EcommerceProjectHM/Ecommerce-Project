@@ -22,19 +22,22 @@ public class ViewCustomer implements IViewCustomer
 	public void setPresenter(IPresenterCustomer presenetr) throws SQLException 
 	{
 		this.presentercustomer = presenetr;
-		showdetails() ;
+		showdetails();
 	}
 	
-	void showdetails() throws SQLException
+	public void showdetails() throws SQLException
 	{
 		@SuppressWarnings("resource")
 		Scanner scannerObject = new Scanner(System.in);
-		System.out.println("\nView product list Press ---> 1 \nView cart Press ---> 2 \nLogout Press ---> 3");
+		System.out.println("\nMain Menu :");
+		System.out.println("View product list Press ---> 1 \nView cart Press ---> 2 \nLogout Press ---> 3");
 		switch(scannerObject.nextInt())
 		{
 			case 1: customer();break; 
 			case 2: cartdetails();break; 
-			case 3: System.exit(0);break;
+			case 3: System.out.println("Thank You!"); System.exit(0);break;
+			default : System.out.println("\nPlease Enter Valid Number");
+					  showdetails();
 		}
 	}
 	
@@ -57,7 +60,7 @@ public class ViewCustomer implements IViewCustomer
 		        System.out.print(((ResultSet) cart).getString("Price")+"  ");
 		        System.out.println();
 		 }
-		System.out.println("---------------------------------------------------------------------------");
+		 System.out.println("---------------------------------------------------------------------------");
 		 System.out.println("\nRemove from cart Press ---> 1\nBuy Press ---> 2\nMain Menu Press ---> 3");
 		 
 		 switch(scannerObject.nextInt())

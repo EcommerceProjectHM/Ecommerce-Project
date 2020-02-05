@@ -54,7 +54,7 @@ public class ViewLogin implements IViewLogin
 					{
 						e.printStackTrace();
 					} break;
-			case 4 : System.exit(0); break;
+			case 4 : System.out.println("You had been successfully Exited"); System.exit(0); break;
 			default : 
 					{
 						System.out.println("\nPlease Enter Valid Number");
