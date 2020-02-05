@@ -86,8 +86,8 @@ public class ViewCustomer implements IViewCustomer
 		
 			@SuppressWarnings("resource")
 			Scanner scannerObject = new Scanner(System.in);
-			System.out.println("Enter the product id");
-			int product_id = scannerObject.nextInt();
+			int product_id = viewlist.checkTheS_No();
+			
 			System.out.println("Buy Press ---> 1 \nAdd to cart Press ---> 2");
 			
 			switch(scannerObject.nextInt())

@@ -31,7 +31,7 @@ public class ModelCustomer implements IModelCustomer
 				return "Buy product successfully";
 			} 
 			else
-				return "Only " + quantity + "are avilable";
+				return "Only " + quantity + " are avilable";
 
 		} 
 		else
