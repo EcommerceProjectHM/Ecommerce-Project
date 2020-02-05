@@ -45,5 +45,4 @@ public class PresenterLogin implements IPresenterLogin
 		String result = modellogin.delete_account(username,password);
 		return result;
 	}
-
 }

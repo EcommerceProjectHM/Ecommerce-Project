@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class ModelAdmin implements IModelAdmin
 {
+	@SuppressWarnings("rawtypes")
 	public String adddetails(Object details) throws SQLException
 	{
 		ArrayList al = new ArrayList();

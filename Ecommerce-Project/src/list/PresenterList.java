@@ -5,6 +5,7 @@ import java.sql.SQLException;
 public class PresenterList implements IPresenterList 
 {
 	private IModelList modellist;
+	@SuppressWarnings("unused")
 	private IViewList viewlist;
 
 	public PresenterList(IViewList view, IModelList model) 

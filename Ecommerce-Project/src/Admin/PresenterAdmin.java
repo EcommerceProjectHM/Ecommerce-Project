@@ -5,6 +5,7 @@ import java.sql.SQLException;
 public class PresenterAdmin implements IPresenterAdmin
 {
 	private IModelAdmin modeladmin;
+	@SuppressWarnings("unused")
 	private IViewAdmin viewadmin;
 	
 	public PresenterAdmin(IViewAdmin view, IModelAdmin model) 
