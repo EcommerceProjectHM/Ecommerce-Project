@@ -23,10 +23,10 @@ public class ViewAdmin implements IViewAdmin
 	void showdetails() throws SQLException
 	{
 		Scanner scannerObject=new Scanner(System.in);
-		System.out.println("Add products press 1");
-		System.out.println("remove products press 2");
-		System.out.println("View products press 3");
-		System.out.println("exit press 4");
+		System.out.println("Add products Press ---> 1");
+		System.out.println("Remove products Press ---> 2");
+		System.out.println("View products Press ---> 3");
+		System.out.println("Exit Press ---> 4");
 		int option = scannerObject.nextInt();
 		
 		switch(option)
@@ -52,8 +52,8 @@ public class ViewAdmin implements IViewAdmin
 		al.add(scannerObject.nextLine());
 		System.out.println("Enter the price");
 		al.add(scannerObject.nextLine());
-		System.out.println("Please select option \n 1.print \n 2.Store  \n 3 Re-enter");
-		int data=scannerObject.nextInt();
+		System.out.println("Please select option \nPrint Press ---> 1\nStore Press ---> 2 \nRe-enter Press ---> 3");
+		int data = scannerObject.nextInt();
 		
 		switch(data)
 		{
