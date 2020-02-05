@@ -36,8 +36,8 @@ public class ViewCustomer implements IViewCustomer
 		System.out.println("View product list Press ---> 1 \nView cart Press ---> 2 \nLogout Press ---> 3");
 		switch(scannerObject.nextInt())
 		{
-			case 1: customer();break; 
-			case 2: cartdetails();break; 
+			case 1: customer(); break; 
+			case 2: cartdetails(); break; 
 			case 3: {
 						System.out.println("Thank You!\n");
 						ViewLogin view = new ViewLogin();

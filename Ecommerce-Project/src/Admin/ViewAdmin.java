@@ -31,9 +31,9 @@ public class ViewAdmin implements IViewAdmin
 		
 		switch(option)
 		{
-			case 1:addproducts();break;
-			case 2:removeproducts();break;
-			case 3:viewproducts();break;
+			case 1:addproducts(); break;
+			case 2:removeproducts(); break;
+			case 3:viewproducts(); break;
 			case 4:System.exit(0);;
 		}
 	}

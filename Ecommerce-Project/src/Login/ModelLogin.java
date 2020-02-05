@@ -90,8 +90,7 @@ public class ModelLogin implements IModelLogin
 					Connection c2 = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
 					Statement s2 = c2.createStatement();
 					s2.executeUpdate("DELETE FROM login WHERE User_Name ='"+ username +"' AND Password ='"+ password +"'");
-					result = "true";
-					break;
+					result = "true"; break;
 			    }
 			}
 			return result;

@@ -83,6 +83,7 @@ public class ViewList implements IViewList
 				System.out.println("------------------------------------------------");
 			}
 		}
+		
 			catch (SQLException e) 
 			{
 				e.printStackTrace();
