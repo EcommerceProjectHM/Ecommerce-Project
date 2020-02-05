@@ -22,7 +22,7 @@ public class ModelCustomer implements IModelCustomer
 			quantity = Integer.parseInt(ss.getString("Qty").toString());
 		}
 
-		if (givenPrice >= price * givenQuantity) 
+		if (givenPrice >= price * givenQuantity)
 		{
 			if (quantity >= givenQuantity) 
 			{
@@ -78,4 +78,5 @@ public class ModelCustomer implements IModelCustomer
 		s1.executeUpdate("delete from cart where S_No=" + S_No);
 		return "product removed sucessfully";
 	}
+	
 }

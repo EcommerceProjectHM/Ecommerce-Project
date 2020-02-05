@@ -5,10 +5,13 @@ import java.sql.SQLException;
 public class PresenterCustomer implements IPresenterCustomer
 {
 	IModelCustomer modelcustomer;
+	
 	IViewCustomer viewcustomer;
+	
 	public PresenterCustomer(IViewCustomer view, IModelCustomer model) 
 	{
 		this.modelcustomer = model;
+		
 		this.viewcustomer = view;
 	}
 

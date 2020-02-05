@@ -127,5 +127,5 @@ public class ViewCustomer implements IViewCustomer
 			case 2:{ cartdetails();}
 		}	
 		showdetails();
-	}
+		}
 }
