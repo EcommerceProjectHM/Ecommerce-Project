@@ -29,6 +29,7 @@ public class ViewLogin implements IViewLogin
 	{
 		@SuppressWarnings("resource")
 		Scanner sc1 = new Scanner(System.in);
+		System.out.println("Home Page :");
 		System.out.println("Sign in Press ---> 1");
 		System.out.println("Sign Up Press ---> 2");
 		System.out.println("Account Delete Press ---> 3");

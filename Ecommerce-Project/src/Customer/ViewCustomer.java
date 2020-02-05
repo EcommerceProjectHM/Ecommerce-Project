@@ -4,6 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import Login.ModelLogin;
+import Login.PresenterLogin;
+import Login.ViewLogin;
 import list.IViewList;
 import list.ModelList;
 import list.PresenterList;
@@ -35,7 +38,12 @@ public class ViewCustomer implements IViewCustomer
 		{
 			case 1: customer();break; 
 			case 2: cartdetails();break; 
-			case 3: System.out.println("Thank You!"); System.exit(0);break;
+			case 3: {
+				System.out.println("Thank You!\n");
+				ViewLogin view = new ViewLogin();
+				view.setPresenter(new PresenterLogin(view,new ModelLogin()));
+				break;
+			        }
 			default : System.out.println("\nPlease Enter Valid Number");
 					  showdetails();
 		}
@@ -82,7 +90,7 @@ public class ViewCustomer implements IViewCustomer
 	
 	public  void customer() throws SQLException
 	{   
-        System.out.println("The following category products are avilable");
+        System.out.println("\nThe following category products are avilable");
 		IViewList viewlist = new ViewList();
 		viewlist.setPresenter(new PresenterList(viewlist,new ModelList()));
 		
@@ -91,19 +99,27 @@ public class ViewCustomer implements IViewCustomer
 			Scanner scannerObject = new Scanner(System.in);
 			int product_id = viewlist.checkTheS_No();
 			
-			System.out.println("Buy Press ---> 1 \nAdd to cart Press ---> 2");
-			
-			switch(scannerObject.nextInt())
+			while(true)
 			{
-				case 1:{buy( product_id);break;}
-				case 2:{addToCart(product_id);break;}
+				System.out.println("\nOptions :");
+				System.out.println("Buy Press ---> 1 \nAdd to cart Press ---> 2 \nMain Menu Press ---> 3");
+			
+				switch(scannerObject.nextInt())
+				{
+					case 1:buy( product_id);break;
+					case 2:addToCart(product_id);break;
+					case 3:showdetails();break;
+					default:System.out.println("\nPlease Enter Valid Number");
+			  		  		continue;
+				}
 			}
-			showdetails();
+			
 	}
 	public  void buy(int product_Id) throws SQLException 
 	{
 		 @SuppressWarnings("resource")
 		 Scanner scannerObject = new Scanner(System.in);
+		 System.out.println("\nBuy Page :");
 		 System.out.println("Please enter the Quantity");
 		 int quantity = scannerObject.nextInt();
 		 System.out.println("Enter the Amount");
@@ -117,15 +133,23 @@ public class ViewCustomer implements IViewCustomer
 	{
 		String customer = this.username;
 		System.out.println(presentercustomer.addcart(product_id,customer));
-		System.out.println("if you want to view categoryList Press ---> 1 \nshow cart Press ---> 2 ");
-	    @SuppressWarnings("resource")
-		Scanner scannerObject = new Scanner(System.in);
-
-		switch(scannerObject.nextInt())
+		while(true)
 		{
-			case 1:{ customer();break;}
-			case 2:{ cartdetails();}
-		}	
-		showdetails();
+			System.out.println("\nIf you want to view \ncategoryList Press ---> 1 \nShow cart Press ---> 2 \nMain Menu Press ---> 3");
+		    @SuppressWarnings("resource")
+			Scanner scannerObject = new Scanner(System.in);
+
+			switch(scannerObject.nextInt())
+			{
+				case 1: customer();break;
+				case 2: cartdetails();break;
+				case 3: showdetails();break;
+				default : System.out.println("\nPlease Enter Valid Number");
+				  		  continue;
+				
+			}	
+		}
+		
+		
 	}
 }
