@@ -28,13 +28,13 @@ public class ViewLogin implements IViewLogin
 	public void homepage()
 	{
 		@SuppressWarnings("resource")
-		Scanner sc1 = new Scanner(System.in);
+		Scanner scannerObject1= new Scanner(System.in);
 		System.out.println("Home Page :");
 		System.out.println("Sign in Press ---> 1");
 		System.out.println("Sign Up Press ---> 2");
 		System.out.println("Account Delete Press ---> 3");
 		System.out.println("Exit Application Press ---> 4");
-		int option = sc1.nextInt();
+		int option = scannerObject1.nextInt();
 
 		switch(option)
 		{
@@ -70,11 +70,11 @@ public class ViewLogin implements IViewLogin
 	{
 		System.out.println("\nSign In Page :");
 		@SuppressWarnings("resource")
-		Scanner sc1 = new Scanner(System.in);
+		Scanner scannerObject1 = new Scanner(System.in);
 		System.out.println("Enter Your Username :");
-		String username = sc1.nextLine();
+		String username = scannerObject1.nextLine();
 		System.out.println("Enter Your Password :");
-		String password = sc1.nextLine();
+		String password = scannerObject1.nextLine();
 		
 		presenterlogin.pass(username,password);
 		presenterlogin.login();
@@ -85,11 +85,11 @@ public class ViewLogin implements IViewLogin
 	{
 		System.out.println("\nSign Up Page :");
 		@SuppressWarnings("resource")
-		Scanner sc1 = new Scanner(System.in);
+		Scanner scannerObject1 = new Scanner(System.in);
 		System.out.println("Enter the Username :");
-		String username = sc1.nextLine();
+		String username = scannerObject1.nextLine();
 		System.out.println("Enter the Password :");
-		String password = sc1.nextLine();
+		String password = scannerObject1.nextLine();
 		
 		presenterlogin.signup(username,password);
 		System.out.println("Sign Up Successfully");
@@ -101,11 +101,11 @@ public class ViewLogin implements IViewLogin
 	{
 		System.out.println("\nAccount Delete Page :");
 		@SuppressWarnings("resource")
-		Scanner sc1 = new Scanner(System.in);
+		Scanner scannerObject1 = new Scanner(System.in);
 		System.out.println("Enter Your Username :");
-		String username = sc1.nextLine();
+		String username = scannerObject1.nextLine();
 		System.out.println("Enter Your Password :");
-		String password = sc1.nextLine();
+		String password = scannerObject1.nextLine();
 		
 		String result = presenterlogin.delete_account(username,password);
 		if("true" == result)

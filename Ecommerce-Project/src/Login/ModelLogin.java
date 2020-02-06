@@ -30,16 +30,16 @@ public class ModelLogin implements IModelLogin
 		//Login method to connect the sqlserver and get the datas
 		public String login() throws SQLException  
 		{
-			Connection c = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
-			Statement s1 = c.createStatement();
-			ResultSet rs = s1.executeQuery("select * from login");
+			Connection connectionObject = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
+			Statement statementObject = connectionObject.createStatement();
+			ResultSet resultSetObject = statementObject.executeQuery("select * from login");
 		
 			String result = "Please re-enter correct username and password :";
 
-			while(rs.next())
+			while(resultSetObject.next())
 			{
-				String name  = rs.getString("User_Name");
-				String password = rs.getString("Password");
+				String name  = resultSetObject.getString("User_Name");
+				String password = resultSetObject.getString("Password");
 			
 				//check the given username and password is correct or not
 				//Already username and password is stored in database
@@ -66,30 +66,30 @@ public class ModelLogin implements IModelLogin
 		//Sign up the Account 
 		public void signup(String username, String password) throws SQLException 
 		{
-			Connection c = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
-			Statement s1 = c.createStatement();
-			s1.executeUpdate("insert into login values ('"+ username + "','" + password+"')");
+			Connection connectionObject = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
+			Statement statementObject1 = connectionObject.createStatement();
+			statementObject1.executeUpdate("insert into login values ('"+ username + "','" + password+"')");
 		}
 
 		//Delete exist account 
 		public String delete_account(String username, String password) throws SQLException 
 		{
-			Connection c = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
-			Statement s1 = c.createStatement();
-			ResultSet rs = s1.executeQuery("select * from login");
+			Connection connectionObject = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
+			Statement statementObject1 = connectionObject.createStatement();
+			ResultSet resultSetObject = statementObject1.executeQuery("select * from login");
 			
 			String result = "false";
-			while(rs.next())
+			while(resultSetObject.next())
 			{
-				String name  = rs.getString("User_Name");
-				String pass = rs.getString("Password");
+				String name  = resultSetObject.getString("User_Name");
+				String pass = resultSetObject.getString("Password");
 				
 				//Username and password is correct means delete account
 			    if(name.equals(username) && pass.equals(password))
 			    {
-					Connection c2 = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
-					Statement s2 = c2.createStatement();
-					s2.executeUpdate("DELETE FROM login WHERE User_Name ='"+ username +"' AND Password ='"+ password +"'");
+					Connection connectionObject2 = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
+					Statement statementObject2 = connectionObject2.createStatement();
+					statementObject2.executeUpdate("DELETE FROM login WHERE User_Name ='"+ username +"' AND Password ='"+ password +"'");
 					result = "true";break;
 			    }
 			}

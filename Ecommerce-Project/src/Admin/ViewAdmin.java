@@ -20,6 +20,8 @@ public class ViewAdmin implements IViewAdmin
 	}
 	
 	@SuppressWarnings("resource")
+	
+	// show details
 	void showdetails() throws SQLException
 	{
 		Scanner scannerObject=new Scanner(System.in);
@@ -31,13 +33,14 @@ public class ViewAdmin implements IViewAdmin
 		
 		switch(option)
 		{
-			case 1:addproducts(); break;
-			case 2:removeproducts(); break;
-			case 3:viewproducts(); break;
+			case 1:addproducts();break;
+			case 2:removeproducts();break;
+			case 3:viewproducts();break;
 			case 4:System.exit(0);;
 		}
 	}
 	
+	// add products
 	public void addproducts() throws SQLException
 	{
 		Scanner scannerObject = new Scanner(System.in);
@@ -66,7 +69,7 @@ public class ViewAdmin implements IViewAdmin
 			case 2:
 				try 
 				{
-					System.out.println(presenteradmin.addproducts(al));
+						System.out.println(presenteradmin.addproducts(al));
 				} 
 				catch (SQLException e) 
 				{
@@ -78,26 +81,31 @@ public class ViewAdmin implements IViewAdmin
 		    case 3:
 		    	{
 			    	al.removeAll(al);al.clear();
-			    	addproducts(); break;
+			    	addproducts();break;
 		    	}
 		}
 		scannerObject.close();showdetails();	
 	}
-	
 	public void removeproducts() throws SQLException
+	
 	{
 		IViewList viewlist = new ViewList();
 		viewlist.setPresenter(new PresenterList(viewlist,new ModelList()));
-		System.out.println("Enter the S_No if you want to remove");
+		//System.out.println("Enter the S_No if you want to remove");
 		int S_No = viewlist.checkTheS_No();
 		System.out.println(presenteradmin.removeProducts(S_No));
 		showdetails();	
 	}
-	
 	public void viewproducts() throws SQLException
 	{
 		IViewList viewlist = new ViewList();
 		viewlist.setPresenter(new PresenterList(viewlist,new ModelList()));
 		showdetails();
 	}
+	
+//	public static void main(String args[]) throws SQLException 
+//	{
+//		IViewAdmin viewadmin = new ViewAdmin();
+//		viewadmin.setPresenter(new PresenterAdmin(viewadmin,new ModelAdmin()));
+//	}
 }
