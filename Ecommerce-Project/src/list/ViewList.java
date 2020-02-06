@@ -35,16 +35,16 @@ public class ViewList implements IViewList
 	{
 		try 
 		{
-			Object ss = presenterlist.category();
+			Object categoryLostObject = presenterlist.category();
 			ArrayList<String> category_name = new ArrayList<String>();
 			System.out.println("-----------------------");
 			System.out.println("S_No " + "Category_Name ");
 			System.out.println("-----------------------");
 
-			while (((ResultSet) ss).next())
+			while (((ResultSet) categoryLostObject).next())
 			{
-				String S_No = ((ResultSet) ss).getString("S_No");
-				String Category_Name = ((ResultSet) ss).getString("Category_Name");
+				String S_No = ((ResultSet) categoryLostObject).getString("S_No");
+				String Category_Name = ((ResultSet) categoryLostObject).getString("Category_Name");
 				category_name.add(Category_Name);
 				System.out.println(S_No + "    " + Category_Name);
 			}
@@ -68,18 +68,18 @@ public class ViewList implements IViewList
 			
 			if(count == 1)
 			{
-				Object productlist = presenterlist.categoryS_No(category_name.get(category - 1).toString());
+				Object productlistObject = presenterlist.categoryS_No(category_name.get(category - 1).toString());
 				System.out.println("\nProduct Details :");
 				System.out.println("-------------------------------------------------");
 				System.out.println("S_No " + "Product_Name  " + "Product_Description  " + "Price ");
 				System.out.println("-------------------------------------------------");
 
-				while (((ResultSet) productlist).next()) 
+				while (((ResultSet) productlistObject).next()) 
 				{
-					String S_No = ((ResultSet) productlist).getString("S_No");
-					String Product_Name = ((ResultSet) productlist).getString("Product_Name");
-					String Product_Description = ((ResultSet) productlist).getString("Product_Description");
-					String Price = ((ResultSet) productlist).getString("Price");
+					String S_No = ((ResultSet) productlistObject).getString("S_No");
+					String Product_Name = ((ResultSet) productlistObject).getString("Product_Name");
+					String Product_Description = ((ResultSet) productlistObject).getString("Product_Description");
+					String Price = ((ResultSet) productlistObject).getString("Price");
 					System.out.println(S_No + "   " + Product_Name + "        " + Product_Description + "       " + Price);
 					this.productS_No.add(S_No);
 				}
