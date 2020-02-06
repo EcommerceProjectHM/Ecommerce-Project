@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 public class ModelList implements IModelList 
 {
+	 //This method is used to view the category list
 	 public Object category() throws SQLException
 	 {
 		Connection c = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63;databaseName={fresher_ecom_task};","ecomfresher","Change@Fresher");
@@ -16,6 +17,7 @@ public class ModelList implements IModelList
 		return ss;
 	 }
 	 
+	 //This method is used to view the product list
 	 public Object productlist(String i) throws SQLException 
 	 {
 		Connection c = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63;databaseName={fresher_ecom_task};","ecomfresher","Change@Fresher");

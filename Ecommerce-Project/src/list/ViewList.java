@@ -10,6 +10,8 @@ public class ViewList implements IViewList
 	private IPresenterList presenterlist;
 	private ArrayList<String> productS_No = new ArrayList<String>();
 
+	//This method is used to check the product S_No number
+	//from customer and admin
 	public int checkTheS_No() 
 	{
 		@SuppressWarnings("resource")
@@ -28,6 +30,7 @@ public class ViewList implements IViewList
 		return 0;
 	}
 
+	//This method is used to view the category list and product list
 	public void category() throws SQLException 
 	{
 		try 
@@ -89,16 +92,11 @@ public class ViewList implements IViewList
 				e.printStackTrace();
 			}
 	}
-
+	
+	//This method is set the presenter object from customer and admin class
 	public void setPresenter(IPresenterList prese) throws SQLException
 	{
 		this.presenterlist = prese;
 		category();
 	}
-
-	public void updateStatusLabel(String result)
-	{
-		System.out.println(result);
-	}
-
 }
