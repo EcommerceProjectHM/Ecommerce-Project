@@ -95,9 +95,18 @@ public class ViewLogin implements IViewLogin
 		System.out.println("Enter the Password :");
 		String password = scannerObject1.nextLine();
 		
-		presenterlogin.signup(username,password);
-		System.out.println("Sign Up Successfully");
-		homepage();
+		String output = presenterlogin.signup(username,password);
+		if("success".equals(output))
+		{
+			System.out.println("Sign Up Successfully");
+			homepage();
+		}
+		else
+		{
+			System.out.println("Please Re-enter UserName and Password:");
+			signup();
+		}
+		
 	}
 	
 	//Delete account method to delete exist account 
@@ -112,7 +121,7 @@ public class ViewLogin implements IViewLogin
 		String password = scannerObject1.nextLine();
 		
 		String result = presenterlogin.delete_account(username,password);
-		if("true" == result)
+		if("true".equals(result))
 		{
 			System.out.println("Account Delete Successfully");
 			homepage();
