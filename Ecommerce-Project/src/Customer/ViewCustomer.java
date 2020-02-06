@@ -2,6 +2,7 @@ package Customer;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Login.ModelLogin;
@@ -14,6 +15,7 @@ import list.ViewList;
 
 public class ViewCustomer implements IViewCustomer
 {
+	private ArrayList cartS_No=new ArrayList();
 	private IPresenterCustomer presentercustomer; 
 	private String username;
 	
@@ -21,6 +23,23 @@ public class ViewCustomer implements IViewCustomer
 	{
 		this.username = username;
 	} 
+	
+	public int checkTheS_No() 
+	{
+		@SuppressWarnings("resource")
+		Scanner scannerObject = new Scanner(System.in);
+		int number = scannerObject.nextInt();
+		for (int i = 0; i < this.cartS_No.size(); i++) 
+		{
+			if (number == (int)Integer.parseInt(this.cartS_No.get(i).toString()))
+			{
+				return number;
+			}
+		}
+		System.err.println("Please enter the corrct S_No");
+		checkTheS_No();
+		return 0;
+	}
 	
 	public void setPresenter(IPresenterCustomer presenetr) throws SQLException 
 	{
@@ -58,8 +77,10 @@ public class ViewCustomer implements IViewCustomer
 		System.out.println("S_No "+"Customer_name "+"Product_Name "+"Category_name "+" Product_Description "+" Price");
 		System.out.println("---------------------------------------------------------------------------");
 		while(((ResultSet) cart).next())
-		{
-		        System.out.print(((ResultSet) cart).getString("S_No")+"    ");
+		{       
+			    String i=((ResultSet) cart).getString("S_No");
+			    cartS_No.add(i);
+		        System.out.print(i+"    ");
 		        System.out.print(((ResultSet) cart).getString("Customer_Name")+"        ");
 		        System.out.print(((ResultSet) cart).getString("Product_Name")+"       ");
 		        System.out.print(((ResultSet) cart).getString("Category_Name")+"       ");
@@ -74,12 +95,12 @@ public class ViewCustomer implements IViewCustomer
 		 {
 			 case 1:{
 					 System.out.println("Enter the S_No if you want to remove");
-					 S_No = scannerObject.nextInt();
-					 System.out.println(presentercustomer.removecart(S_No)); break;
+					 S_No = checkTheS_No() ;
+					 System.out.println(presentercustomer.removecart(S_No,this.username)); break;
 				    }
 			 case 2:{
 					 System.out.println("Enter the S_No if you want to buy");
-					 S_No = scannerObject.nextInt();
+					 S_No = checkTheS_No() ;
 					 buy(S_No);break;
 					 }
 		 }
@@ -125,7 +146,7 @@ public class ViewCustomer implements IViewCustomer
 		
 		System.out.println(presentercustomer.buy(product_Id, quantity, givenPrice));
         System.out.println("Thank You "+this.username);
-        presentercustomer.removecart(product_Id);
+        presentercustomer.removecart(product_Id,this.username);
         showdetails();
 	}
 	

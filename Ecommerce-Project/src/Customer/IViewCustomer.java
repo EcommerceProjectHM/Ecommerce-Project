@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 public interface IViewCustomer 
 {
+	public int checkTheS_No();
 	void setPresenter(IPresenterCustomer presenetr) throws SQLException;
 	void buy(int product_Id) throws SQLException;
 	public void addToCart(int product_id) throws SQLException;

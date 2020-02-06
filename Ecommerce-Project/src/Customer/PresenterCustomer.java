@@ -31,8 +31,8 @@ public class PresenterCustomer implements IPresenterCustomer
 		return modelcustomer.showcart(customer);
 	}
 	
-	public String removecart(int S_No) throws SQLException
+	public String removecart(int S_No,String customer) throws SQLException
 	{
-		return modelcustomer.removecart(S_No);
+		return modelcustomer.removecart(S_No,customer);
 	}
 }

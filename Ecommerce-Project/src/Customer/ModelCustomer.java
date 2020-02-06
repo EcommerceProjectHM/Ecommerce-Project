@@ -69,11 +69,11 @@ public class ModelCustomer implements IModelCustomer
 		return ss;
 	}
 
-	public String removecart(int S_No) throws SQLException 
+	public String removecart(int S_No,String customer) throws SQLException 
 	{
 		Connection c = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63;databaseName={fresher_ecom_task};","ecomfresher", "Change@Fresher");
 		Statement s1 = c.createStatement();
-		s1.executeUpdate("delete from cart where S_No=" + S_No);
+		s1.executeUpdate("delete from cart where S_No=" + S_No+" AND Customer_Name='"+customer+"'");
 		return "product removed sucessfully";
 	}
 	
