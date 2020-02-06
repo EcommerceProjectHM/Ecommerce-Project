@@ -11,18 +11,18 @@ public class ModelList implements IModelList
 	 //This method is used to view the category list
 	 public Object category() throws SQLException
 	 {
-		Connection c = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63;databaseName={fresher_ecom_task};","ecomfresher","Change@Fresher");
-		Statement s1 = c.createStatement();
-		ResultSet ss = s1.executeQuery("select * from Category_List");
-		return ss;
+		Connection connectionObject = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63;databaseName={fresher_ecom_task};","ecomfresher","Change@Fresher");
+		Statement statementObject = connectionObject.createStatement();
+		ResultSet resultSetObject = statementObject.executeQuery("select * from Category_List");
+		return resultSetObject;
 	 }
 	 
 	 //This method is used to view the product list
 	 public Object productlist(String i) throws SQLException 
 	 {
-		Connection c = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63;databaseName={fresher_ecom_task};","ecomfresher","Change@Fresher");
-		Statement s1 = c.createStatement();
-		ResultSet ss = s1.executeQuery("select * from ProductsDetails where Category_Name='"+i+"'");
-		return ss;
+		Connection connectionObject = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63;databaseName={fresher_ecom_task};","ecomfresher","Change@Fresher");
+		Statement statementObject = connectionObject.createStatement();
+		ResultSet resultSetObject = statementObject.executeQuery("select * from ProductsDetails where Category_Name='"+i+"'");
+		return resultSetObject;
 	 }
 }

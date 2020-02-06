@@ -15,6 +15,7 @@ import list.ViewList;
 
 public class ViewCustomer implements IViewCustomer
 {
+	@SuppressWarnings("rawtypes")
 	private ArrayList cartS_No=new ArrayList();
 	private IPresenterCustomer presentercustomer; 
 	private String username;
@@ -68,6 +69,7 @@ public class ViewCustomer implements IViewCustomer
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void cartdetails() throws SQLException
 	{   
 		@SuppressWarnings("resource")
