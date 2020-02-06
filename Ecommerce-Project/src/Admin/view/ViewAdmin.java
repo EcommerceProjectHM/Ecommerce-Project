@@ -100,7 +100,6 @@ public class ViewAdmin implements IViewAdmin
 		    case 4:showdetails();	break;
 		    default: continue;
 		}
-		
 	}
 	}
 	public void removeproducts() throws SQLException
