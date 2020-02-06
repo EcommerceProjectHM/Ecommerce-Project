@@ -44,18 +44,18 @@ public class ViewAdmin implements IViewAdmin
 	public void addproducts() throws SQLException
 	{
 		Scanner scannerObject = new Scanner(System.in);
-		ArrayList<String> al = new ArrayList<String>();
+		ArrayList<String> arrayListObject= new ArrayList<String>();
 		
 		System.out.println("Enter the Product_Name");
-		al.add(scannerObject.nextLine());
+		arrayListObject.add(scannerObject.nextLine());
 		System.out.println("Enter the Category_Name");
-		al.add(scannerObject.nextLine());
+		arrayListObject.add(scannerObject.nextLine());
 		System.out.println("Enter the Product_Description");
-		al.add(scannerObject.nextLine());
+		arrayListObject.add(scannerObject.nextLine());
 		System.out.println("Enter the Qty");
-		al.add(scannerObject.nextLine());
+		arrayListObject.add(scannerObject.nextLine());
 		System.out.println("Enter the price");
-		al.add(scannerObject.nextLine());
+		arrayListObject.add(scannerObject.nextLine());
 		System.out.println("Please select option \nPrint Press ---> 1\nStore Press ---> 2 \nRe-enter Press ---> 3");
 		int data = scannerObject.nextInt();
 		
@@ -63,13 +63,13 @@ public class ViewAdmin implements IViewAdmin
 		{
 			case 1:
 			{
-			    System.out.println(al);
+			    System.out.println(arrayListObject);
 			    break;
 			}
 			case 2:
 				try 
 				{
-						System.out.println(presenteradmin.addproducts(al));
+						System.out.println(presenteradmin.addproducts(arrayListObject));
 				} 
 				catch (SQLException e) 
 				{
@@ -80,7 +80,7 @@ public class ViewAdmin implements IViewAdmin
 				break;
 		    case 3:
 		    	{
-			    	al.removeAll(al);al.clear();
+		    		arrayListObject.removeAll(arrayListObject);
 			    	addproducts();break;
 		    	}
 		}
