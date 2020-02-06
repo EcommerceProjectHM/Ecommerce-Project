@@ -27,5 +27,6 @@ public class ModelAdmin implements IModelAdmin
 		statementObject.executeUpdate("delete from ProductsDetails where S_No="+S_No);
 		return "Product removed successfully";
 		
+		
 	}
 }

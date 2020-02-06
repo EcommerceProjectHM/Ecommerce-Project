@@ -82,6 +82,7 @@ public class ViewAdmin implements IViewAdmin
 		    	{
 		    		arrayListObject.removeAll(arrayListObject);
 			    	addproducts();break;
+			    	
 		    	}
 		}
 		scannerObject.close();showdetails();	
