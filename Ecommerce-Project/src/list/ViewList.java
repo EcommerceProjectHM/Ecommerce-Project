@@ -25,7 +25,7 @@ public class ViewList implements IViewList
 				return number;
 			}
 		}
-		System.err.println("Please enter the vcategory_nameid S_No");
+		System.err.println("Please enter the corrct S_No");
 		checkTheS_No();
 		return 0;
 	}

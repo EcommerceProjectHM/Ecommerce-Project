@@ -125,6 +125,7 @@ public class ViewCustomer implements IViewCustomer
 		
 		System.out.println(presentercustomer.buy(product_Id, quantity, givenPrice));
         System.out.println("Thank You "+this.username);
+        presentercustomer.removecart(product_Id);
         showdetails();
 	}
 	
