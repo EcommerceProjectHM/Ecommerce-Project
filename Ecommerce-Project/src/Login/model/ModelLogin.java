@@ -34,7 +34,7 @@ public class ModelLogin implements IModelLogin
 			Statement statementObject = connectionObject.createStatement();
 			ResultSet resultSetObject = statementObject.executeQuery("select * from login");
 		
-			String result = "Please re-enter correct username and password :";
+			String result = "Please re-enter correct username or password :";
 
 			while(resultSetObject.next())
 			{
@@ -64,11 +64,76 @@ public class ModelLogin implements IModelLogin
 		}
 		
 		//Sign up the Account 
-		public void signup(String username, String password) throws SQLException 
+		public String signup(String username, String password) throws SQLException 
 		{
 			Connection connectionObject = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
 			Statement statementObject1 = connectionObject.createStatement();
-			statementObject1.executeUpdate("insert into login values ('"+ username + "','" + password+"')");
+			
+			String value1 = check_username(username);
+			if("fail" == value1)
+			{
+				System.out.println("This UserName is alreaty Used");
+				return "fail";
+			}
+			
+			String value2 = check_password(password);
+			if("Password is valid" != value2)
+			{
+				System.out.println("Password Not Valid : \n* Password must be 8 to 15 characters \n* At least one Capital letter "
+						+ "\n* At least one small letter \n* At least one Number \n* At least one Special character");
+				return "fail";
+			}
+		
+				statementObject1.executeUpdate("insert into login values ('"+ username + "','" + password+"')");
+				return "success";
+		}
+
+		
+		private String check_username(String username) throws SQLException
+		{
+			Connection connectionObject = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
+			Statement statementObject1 = connectionObject.createStatement();
+			ResultSet resultSetObject = statementObject1.executeQuery("select User_Name from login");
+			
+			while(resultSetObject.next())
+			{
+				if( username.equals(resultSetObject.getString("User_Name").toString()) )
+				{
+					return "fail";
+				}
+			}
+			return "success";
+		}
+
+		private String check_password(String password) 
+		{
+			int length = password.length();
+			
+			if(length >= 8 && length <= 15)
+			{
+				int small_alphabet = 0, capital_alphabet = 0;
+				int numeric = 0, special_character = 0;
+				
+				for(int i=0;i<length;i++)
+				{
+					char ch = password.charAt(i);
+					
+					if(ch>='a' && ch<='z')
+						small_alphabet++;
+					else if(ch>='A' && ch<='Z')
+						capital_alphabet++;
+					else if(ch>='0' && ch<='9')
+						numeric++;
+					else
+						special_character++;
+				}
+				if(small_alphabet>=1 && capital_alphabet>=1 && numeric>=1 && special_character>=1)
+					return "Password is valid";
+				else
+					return "Password Not Valid";
+			}
+			else
+				return "Password Not Valid";
 		}
 
 		//Delete exist account 

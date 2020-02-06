@@ -37,9 +37,9 @@ public class PresenterLogin implements IPresenterLogin
 	}
 
 	//signup method to call modellogin interface method of signup
-	public void signup(String username, String password) throws SQLException 
+	public String signup(String username, String password) throws SQLException 
 	{
-		modellogin.signup(username,password);
+		return modellogin.signup(username,password);
 	}
 	
 	//delete_account method to call modellogin interface method of delete_account

@@ -98,12 +98,25 @@ public class ViewCustomer implements IViewCustomer
 		 {
 			 case 1:{
 					 System.out.println("Enter the S_No if you want to remove");
+//					 System.out.println("\nMain Menu Press ---> 3");
+//					 if(scannerObject.nextInt() == 3)
+//					 {
+//						 showdetails();
+//					 }
 					 S_No = checkTheS_No() ;
+					 
 					 System.out.println(presentercustomer.removecart(S_No,this.username)); break;
 				    }
 			 case 2:{
 					 System.out.println("Enter the S_No if you want to buy");
+//					 System.out.println("\nMain Menu Press ---> 3");
+//					 if(scannerObject.nextInt() == 3)
+//					 {
+//						 showdetails();
+//					 }
 					 S_No = checkTheS_No() ;
+					 
+					 
 					 buy(S_No);break;
 					 }
 		 }
