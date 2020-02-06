@@ -18,6 +18,7 @@ public class PresenterCustomer implements IPresenterCustomer
 	public String buy(int product_Id,int quantity,int price) throws SQLException
 	{
 		return modelcustomer.buy(product_Id,quantity,price);
+		
 	}
 	
 	public String addcart(int product_id,String customer) throws SQLException

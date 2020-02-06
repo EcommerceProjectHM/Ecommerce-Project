@@ -59,6 +59,7 @@ public class ModelCustomer implements IModelCustomer
 		s1.execute("insert into cart values (" + product_id + ",'" + Customer_name + "','" +  Product_Name + "','"
 				+ Category_Name + "','" + Product_Description + "'," + price + ")");
 		return "Product added successfully";
+		
 	}
 
 	public Object showcart(String Customer_Name) throws SQLException 

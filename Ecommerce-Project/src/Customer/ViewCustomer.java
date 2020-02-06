@@ -34,6 +34,7 @@ public class ViewCustomer implements IViewCustomer
 			if (number == (int)Integer.parseInt(this.cartS_No.get(i).toString()))
 			{
 				return number;
+				
 			}
 		}
 		System.err.println("Please enter the corrct S_No");
