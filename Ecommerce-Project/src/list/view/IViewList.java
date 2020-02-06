@@ -1,6 +1,8 @@
-package list;
+package list.view;
 
 import java.sql.SQLException;
+
+import list.presenter.IPresenterList;
 
 public interface IViewList
 {

@@ -1,6 +1,9 @@
-package Customer;
+package Customer.presenter;
 
 import java.sql.SQLException;
+
+import Customer.model.IModelCustomer;
+import Customer.view.IViewCustomer;
 
 public class PresenterCustomer implements IPresenterCustomer
 {
@@ -15,9 +18,9 @@ public class PresenterCustomer implements IPresenterCustomer
 		this.viewcustomer = view;
 	}
 
-	public String buy(int product_Id,int quantity,int price) throws SQLException
+	public String buy(int product_Id,int quantity,int price,String username) throws SQLException
 	{
-		return modelcustomer.buy(product_Id,quantity,price);
+		return modelcustomer.buy(product_Id,quantity,price,username);
 		
 	}
 	

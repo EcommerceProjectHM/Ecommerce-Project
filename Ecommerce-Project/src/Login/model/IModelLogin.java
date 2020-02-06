@@ -1,4 +1,4 @@
-package Login;
+package Login.model;
 
 import java.sql.SQLException;
 

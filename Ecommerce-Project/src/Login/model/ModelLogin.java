@@ -1,15 +1,15 @@
-package Login;
+package Login.model;
 
 import java.sql.Statement;
 
-import Admin.IViewAdmin;
-import Admin.ModelAdmin;
-import Admin.PresenterAdmin;
-import Admin.ViewAdmin;
-import Customer.IViewCustomer;
-import Customer.ModelCustomer;
-import Customer.PresenterCustomer;
-import Customer.ViewCustomer;
+import Admin.model.ModelAdmin;
+import Admin.presenter.PresenterAdmin;
+import Admin.view.IViewAdmin;
+import Admin.view.ViewAdmin;
+import Customer.model.ModelCustomer;
+import Customer.presenter.PresenterCustomer;
+import Customer.view.IViewCustomer;
+import Customer.view.ViewCustomer;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;

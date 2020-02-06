@@ -1,17 +1,18 @@
-package Customer;
+package Customer.view;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Login.ModelLogin;
-import Login.PresenterLogin;
-import Login.ViewLogin;
-import list.IViewList;
-import list.ModelList;
-import list.PresenterList;
-import list.ViewList;
+import Customer.presenter.IPresenterCustomer;
+import Login.model.ModelLogin;
+import Login.presenter.PresenterLogin;
+import Login.view.ViewLogin;
+import list.model.ModelList;
+import list.presenter.PresenterList;
+import list.view.IViewList;
+import list.view.ViewList;
 
 public class ViewCustomer implements IViewCustomer
 {
@@ -147,9 +148,8 @@ public class ViewCustomer implements IViewCustomer
 		 System.out.println("Enter the Amount");
 		 int givenPrice = scannerObject.nextInt();
 		
-		System.out.println(presentercustomer.buy(product_Id, quantity, givenPrice));
+		System.out.println(presentercustomer.buy(product_Id, quantity, givenPrice,this.username));
         System.out.println("Thank You "+this.username);
-        presentercustomer.removecart(product_Id,this.username);
         showdetails();
 	}
 	

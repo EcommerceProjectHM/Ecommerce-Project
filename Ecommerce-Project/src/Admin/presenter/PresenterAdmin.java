@@ -1,6 +1,9 @@
-package Admin;
+package Admin.presenter;
 
 import java.sql.SQLException;
+
+import Admin.model.IModelAdmin;
+import Admin.view.IViewAdmin;
 
 public class PresenterAdmin implements IPresenterAdmin
 {

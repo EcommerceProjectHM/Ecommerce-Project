@@ -1,4 +1,4 @@
-package Customer;
+package Customer.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class ModelCustomer implements IModelCustomer
 {
-	public String buy(int product_Id, int givenQuantity, int givenPrice) throws SQLException 
+	public String buy(int product_Id, int givenQuantity, int givenPrice,String customer) throws SQLException 
 	{
 		int price = 0, quantity = 0;
 
@@ -28,6 +28,7 @@ public class ModelCustomer implements IModelCustomer
 			{
 				quantity = quantity - givenQuantity;
 				s1.executeUpdate("UPDATE ProductsDetails SET Qty =" + quantity + " WHERE S_No=" + product_Id);
+				s1.executeUpdate("delete from cart where S_No=" + product_Id+" AND Customer_Name='"+customer+"'");
 				return "Buy product successfully";
 			} 
 			else

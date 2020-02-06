@@ -1,6 +1,8 @@
-package Customer;
+package Customer.view;
 
 import java.sql.SQLException;
+
+import Customer.presenter.IPresenterCustomer;
 
 public interface IViewCustomer 
 {

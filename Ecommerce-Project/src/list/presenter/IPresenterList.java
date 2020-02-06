@@ -1,4 +1,4 @@
-package list;
+package list.presenter;
 
 import java.sql.SQLException;
 

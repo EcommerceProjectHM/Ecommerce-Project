@@ -1,6 +1,8 @@
-package Admin;
+package Admin.view;
 
 import java.sql.SQLException;
+
+import Admin.presenter.IPresenterAdmin;
 
 public interface IViewAdmin 
 {

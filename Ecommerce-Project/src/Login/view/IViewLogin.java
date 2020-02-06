@@ -1,6 +1,8 @@
-package Login;
+package Login.view;
 
 import java.sql.SQLException;
+
+import Login.presenter.IPresenterLogin;
 
 public interface IViewLogin
 {

@@ -1,6 +1,9 @@
-package list;
+package list.presenter;
 
 import java.sql.SQLException;
+
+import list.model.IModelList;
+import list.view.IViewList;
 
 public class PresenterList implements IPresenterList 
 {

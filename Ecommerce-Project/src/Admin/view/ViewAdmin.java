@@ -1,13 +1,17 @@
-package Admin;
+package Admin.view;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import list.IViewList;
-import list.ModelList;
-import list.PresenterList;
-import list.ViewList;
+import Admin.presenter.IPresenterAdmin;
+import Login.model.ModelLogin;
+import Login.presenter.PresenterLogin;
+import Login.view.ViewLogin;
+import list.model.ModelList;
+import list.presenter.PresenterList;
+import list.view.IViewList;
+import list.view.ViewList;
 
 public class ViewAdmin implements IViewAdmin
 {
@@ -25,18 +29,25 @@ public class ViewAdmin implements IViewAdmin
 	void showdetails() throws SQLException
 	{
 		Scanner scannerObject=new Scanner(System.in);
-		System.out.println("Add products Press ---> 1");
-		System.out.println("Remove products Press ---> 2");
-		System.out.println("View products Press ---> 3");
-		System.out.println("Exit Press ---> 4");
+		while(true)
+		{
+			System.out.println("Add products Press ---> 1");
+			System.out.println("Remove products Press ---> 2");
+			System.out.println("View products Press ---> 3");
+			System.out.println("logout Press ---> 4");
 		int option = scannerObject.nextInt();
-		
 		switch(option)
 		{
 			case 1:addproducts();break;
 			case 2:removeproducts();break;
 			case 3:viewproducts();break;
-			case 4:System.exit(0);;
+			case 4:
+			{
+				ViewLogin view = new ViewLogin();
+				view.setPresenter(new PresenterLogin(view,new ModelLogin()));
+			}
+			default :continue;
+		}
 		}
 	}
 	
@@ -85,7 +96,7 @@ public class ViewAdmin implements IViewAdmin
 			    	
 		    	}
 		}
-		scannerObject.close();showdetails();	
+		showdetails();	
 	}
 	public void removeproducts() throws SQLException
 	

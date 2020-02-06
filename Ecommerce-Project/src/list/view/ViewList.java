@@ -1,9 +1,11 @@
-package list;
+package list.view;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import list.presenter.IPresenterList;
 
 public class ViewList implements IViewList 
 {

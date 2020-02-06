@@ -1,4 +1,4 @@
-package Admin;
+package Admin.model;
 
 import java.sql.SQLException;
 
