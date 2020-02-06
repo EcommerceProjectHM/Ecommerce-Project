@@ -78,14 +78,13 @@ public class ViewCustomer implements IViewCustomer
 		String customer = this.username;int S_No=0;
 		Object cart = presentercustomer.showcart(customer);
 		System.out.println("---------------------------------------------------------------------------");
-		System.out.println("S_No "+"Customer_name "+"Product_Name "+"Category_name "+" Product_Description "+" Price");
+		System.out.println("S_No "+"Product_Name "+"Category_name "+" Product_Description "+" Price");
 		System.out.println("---------------------------------------------------------------------------");
 		while(((ResultSet) cart).next())
 		{       
 			    String i=((ResultSet) cart).getString("S_No");
 			    cartS_No.add(i);
 		        System.out.print(i+"    ");
-		        System.out.print(((ResultSet) cart).getString("Customer_Name")+"        ");
 		        System.out.print(((ResultSet) cart).getString("Product_Name")+"       ");
 		        System.out.print(((ResultSet) cart).getString("Category_Name")+"       ");
 		        System.out.print(((ResultSet) cart).getString("Product_Description")+"    ");

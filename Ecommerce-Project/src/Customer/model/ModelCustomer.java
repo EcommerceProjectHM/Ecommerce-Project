@@ -29,13 +29,13 @@ public class ModelCustomer implements IModelCustomer
 				quantity = quantity - givenQuantity;
 				s1.executeUpdate("UPDATE ProductsDetails SET Qty =" + quantity + " WHERE S_No=" + product_Id);
 				s1.executeUpdate("delete from cart where S_No=" + product_Id+" AND Customer_Name='"+customer+"'");
-				return "Buy product successfully";
+				return "Buy product successfully "+(givenPrice-(price*givenQuantity))+" refunded";
 			} 
 			else
 				return "Only " + quantity + " are avilable";
 		} 
 		else
-			return  "Low balance";
+			return  "Low balance "+(price-(givenPrice*quantity))+" amount needed";
 	}
 
 	public String addcart(int product_id, String Customer_name) throws SQLException 

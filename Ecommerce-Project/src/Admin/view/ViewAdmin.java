@@ -31,6 +31,7 @@ public class ViewAdmin implements IViewAdmin
 		Scanner scannerObject=new Scanner(System.in);
 		while(true)
 		{
+			System.out.println("       main menu");
 			System.out.println("Add products Press ---> 1");
 			System.out.println("Remove products Press ---> 2");
 			System.out.println("View products Press ---> 3");
@@ -67,9 +68,10 @@ public class ViewAdmin implements IViewAdmin
 		arrayListObject.add(scannerObject.nextLine());
 		System.out.println("Enter the price");
 		arrayListObject.add(scannerObject.nextLine());
-		System.out.println("Please select option \nPrint Press ---> 1\nStore Press ---> 2 \nRe-enter Press ---> 3");
+		while(true)
+		{
+		System.out.println("Please select option \nPrint Press ---> 1\nStore Press ---> 2 \nRe-enter Press ---> 3 \nMainmenu Press ---> 4 ");
 		int data = scannerObject.nextInt();
-		
 		switch(data)
 		{
 			case 1:
@@ -95,8 +97,11 @@ public class ViewAdmin implements IViewAdmin
 			    	addproducts();break;
 			    	
 		    	}
+		    case 4:showdetails();	break;
+		    default: continue;
 		}
-		showdetails();	
+		
+	}
 	}
 	public void removeproducts() throws SQLException
 	
@@ -115,9 +120,4 @@ public class ViewAdmin implements IViewAdmin
 		showdetails();
 	}
 	
-//	public static void main(String args[]) throws SQLException 
-//	{
-//		IViewAdmin viewadmin = new ViewAdmin();
-//		viewadmin.setPresenter(new PresenterAdmin(viewadmin,new ModelAdmin()));
-//	}
 }
