@@ -25,7 +25,7 @@ public class ViewList implements IViewList
 				return number;
 			}
 		}
-		System.err.println("Please enter the corrct S_No");
+		System.err.println("Please enter the correct S_No");
 		checkTheS_No();
 		return 0;
 	}
@@ -50,7 +50,7 @@ public class ViewList implements IViewList
 			}
 			System.out.println("-----------------------");
 
-			System.out.println("\nPlease select the S_no if you interest");
+			System.out.println("\nPlease select the S_No if you interest");
 			@SuppressWarnings("resource")
 			Scanner scannerObject = new Scanner(System.in);
 			int category = scannerObject.nextInt();
@@ -62,7 +62,7 @@ public class ViewList implements IViewList
 			}
 			else 
 			{
-				System.err.println("Please select correct S_no");
+				System.err.println("Please select correct S_No");
 				category();
 			}
 			
