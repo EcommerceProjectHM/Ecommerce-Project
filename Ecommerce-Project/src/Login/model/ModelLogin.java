@@ -10,7 +10,6 @@ import Customer.model.ModelCustomer;
 import Customer.presenter.PresenterCustomer;
 import Customer.view.IViewCustomer;
 import Customer.view.ViewCustomer;
-
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,12 +26,19 @@ public class ModelLogin implements IModelLogin
 	        this.password = password;
 	    } 
 		
-		//Login method to connect the sqlserver and get the datas
-		public String login() throws SQLException  
+		static public Statement connection() throws SQLException
 		{
 			Connection connectionObject = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
 			Statement statementObject = connectionObject.createStatement();
-			ResultSet resultSetObject = statementObject.executeQuery("select * from login");
+			return statementObject;
+		}
+		
+		
+		public String login() throws SQLException
+		{
+			Statement statementObject1 = ModelLogin.connection();
+			
+			ResultSet resultSetObject = statementObject1.executeQuery("select * from login");
 		
 			String result = "Please re-enter correct username or password :";
 
@@ -66,8 +72,8 @@ public class ModelLogin implements IModelLogin
 		//Sign up the Account 
 		public String signup(String username, String password) throws SQLException 
 		{
-			Connection connectionObject = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
-			Statement statementObject1 = connectionObject.createStatement();
+
+			Statement statementObject1 = ModelLogin.connection();
 			
 			String value1 = check_username(username);
 			if("fail" == value1)
@@ -91,8 +97,8 @@ public class ModelLogin implements IModelLogin
 		
 		private String check_username(String username) throws SQLException
 		{
-			Connection connectionObject = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
-			Statement statementObject1 = connectionObject.createStatement();
+			Statement statementObject1 = ModelLogin.connection();
+			
 			ResultSet resultSetObject = statementObject1.executeQuery("select User_Name from login");
 			
 			while(resultSetObject.next())
@@ -139,8 +145,8 @@ public class ModelLogin implements IModelLogin
 		//Delete exist account 
 		public String delete_account(String username, String password) throws SQLException 
 		{
-			Connection connectionObject = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
-			Statement statementObject1 = connectionObject.createStatement();
+			Statement statementObject1 = ModelLogin.connection();
+			
 			ResultSet resultSetObject = statementObject1.executeQuery("select * from login");
 			
 			String result = "false";
