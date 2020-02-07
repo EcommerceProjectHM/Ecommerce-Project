@@ -28,7 +28,8 @@ public class ViewAdmin implements IViewAdmin
 	// show details
 	void showdetails() throws SQLException
 	{
-		Scanner scannerObject=new Scanner(System.in);
+        Object scannerObject= ViewLogin.scannerObject();
+
 		while(true)
 		{
 			System.out.println("       main menu");
@@ -36,7 +37,7 @@ public class ViewAdmin implements IViewAdmin
 			System.out.println("Remove products Press ---> 2");
 			System.out.println("View products Press ---> 3");
 			System.out.println("logout Press ---> 4");
-		int option = scannerObject.nextInt();
+		int option = ((Scanner) scannerObject).nextInt();
 		switch(option)
 		{
 			case 1:addproducts();break;
@@ -55,23 +56,24 @@ public class ViewAdmin implements IViewAdmin
 	// add products
 	public void addproducts() throws SQLException
 	{
-		Scanner scannerObject = new Scanner(System.in);
+        Object scannerObject= ViewLogin.scannerObject();
+
 		ArrayList<String> arrayListObject= new ArrayList<String>();
 		
 		System.out.println("Enter the Product_Name");
-		arrayListObject.add(scannerObject.nextLine());
+		arrayListObject.add(((Scanner) scannerObject).nextLine());
 		System.out.println("Enter the Category_Name");
-		arrayListObject.add(scannerObject.nextLine());
+		arrayListObject.add(((Scanner) scannerObject).nextLine());
 		System.out.println("Enter the Product_Description");
-		arrayListObject.add(scannerObject.nextLine());
+		arrayListObject.add(((Scanner) scannerObject).nextLine());
 		System.out.println("Enter the Qty");
-		arrayListObject.add(scannerObject.nextLine());
+		arrayListObject.add(((Scanner) scannerObject).nextLine());
 		System.out.println("Enter the price");
-		arrayListObject.add(scannerObject.nextLine());
+		arrayListObject.add(((Scanner) scannerObject).nextLine());
 		while(true)
 		{
 		System.out.println("Please select option \nPrint Press ---> 1\nStore Press ---> 2 \nRe-enter Press ---> 3 \nMainmenu Press ---> 4 ");
-		int data = scannerObject.nextInt();
+		int data = ((Scanner) scannerObject).nextInt();
 		switch(data)
 		{
 			case 1:

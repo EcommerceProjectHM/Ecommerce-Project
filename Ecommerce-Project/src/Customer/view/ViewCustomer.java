@@ -29,8 +29,8 @@ public class ViewCustomer implements IViewCustomer
 	public int checkTheS_No() 
 	{
 		@SuppressWarnings("resource")
-		Scanner scannerObject = new Scanner(System.in);
-		int number = scannerObject.nextInt();
+        Object scannerObject= ViewLogin.scannerObject();
+		int number = ((Scanner) scannerObject).nextInt();
 		for (int i = 0; i < this.cartS_No.size(); i++) 
 		{
 			if (number == (int)Integer.parseInt(this.cartS_No.get(i).toString()))
@@ -53,10 +53,10 @@ public class ViewCustomer implements IViewCustomer
 	public void showdetails() throws SQLException
 	{
 		@SuppressWarnings("resource")
-		Scanner scannerObject = new Scanner(System.in);
+        Object scannerObject= ViewLogin.scannerObject();
 		System.out.println("\nMain Menu :");
 		System.out.println("View product list Press ---> 1 \nView cart Press ---> 2 \nLogout Press ---> 3");
-		switch(scannerObject.nextInt())
+		switch(((Scanner) scannerObject).nextInt())
 		{
 			case 1: customer(); break; 
 			case 2: cartdetails(); break; 
@@ -74,7 +74,7 @@ public class ViewCustomer implements IViewCustomer
 	public void cartdetails() throws SQLException
 	{   
 		@SuppressWarnings("resource")
-		Scanner scannerObject = new Scanner(System.in);
+        Object scannerObject= ViewLogin.scannerObject();
 		String customer = this.username;int S_No=0;
 		Object cart = presentercustomer.showcart(customer);
 		System.out.println("---------------------------------------------------------------------------");
@@ -94,7 +94,7 @@ public class ViewCustomer implements IViewCustomer
 		 System.out.println("---------------------------------------------------------------------------");
 		 System.out.println("\nRemove from cart Press ---> 1\nBuy Press ---> 2\nMain Menu Press ---> 3");
 		 
-		 switch(scannerObject.nextInt())
+		 switch(((Scanner) scannerObject).nextInt())
 		 {
 			 case 1:{
 					 System.out.println("Enter the S_No if you want to remove");
@@ -131,7 +131,7 @@ public class ViewCustomer implements IViewCustomer
 		
 		
 			@SuppressWarnings("resource")
-			Scanner scannerObject = new Scanner(System.in);
+	        Object scannerObject= ViewLogin.scannerObject();
 			int product_id = viewlist.checkTheS_No();
 			
 			while(true)
@@ -139,7 +139,7 @@ public class ViewCustomer implements IViewCustomer
 				System.out.println("\nOptions :");
 				System.out.println("Buy Press ---> 1 \nAdd to cart Press ---> 2 \nMain Menu Press ---> 3");
 			
-				switch(scannerObject.nextInt())
+				switch(((Scanner) scannerObject).nextInt())
 				{
 					case 1:buy( product_id);break;
 					case 2:addToCart(product_id);break;
@@ -153,12 +153,12 @@ public class ViewCustomer implements IViewCustomer
 	public  void buy(int product_Id) throws SQLException 
 	{
 		 @SuppressWarnings("resource")
-		 Scanner scannerObject = new Scanner(System.in);
+	        Object scannerObject= ViewLogin.scannerObject();
 		 System.out.println("\nBuy Page :");
 		 System.out.println("Please enter the Quantity");
-		 int quantity = scannerObject.nextInt();
+		 int quantity = ((Scanner) scannerObject).nextInt();
 		 System.out.println("Enter the Amount");
-		 int givenPrice = scannerObject.nextInt();
+		 int givenPrice = ((Scanner) scannerObject).nextInt();
 		
 		System.out.println(presentercustomer.buy(product_Id, quantity, givenPrice,this.username));
         System.out.println("Thank You "+this.username);
@@ -173,9 +173,9 @@ public class ViewCustomer implements IViewCustomer
 		{
 			System.out.println("\nIf you want to view \ncategoryList Press ---> 1 \nShow cart Press ---> 2 \nMain Menu Press ---> 3");
 		    @SuppressWarnings("resource")
-			Scanner scannerObject = new Scanner(System.in);
+	        Object scannerObject= ViewLogin.scannerObject();
 
-			switch(scannerObject.nextInt())
+			switch(((Scanner) scannerObject).nextInt())
 			{
 				case 1: customer();break;
 				case 2: cartdetails();break;
