@@ -10,7 +10,7 @@ public class ModelAdmin implements IModelAdmin
 {
 	
 	
-	public  static Object connection() throws SQLException
+	public   Object connection() throws SQLException
 	{
 
 		Connection c = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
@@ -22,7 +22,7 @@ public class ModelAdmin implements IModelAdmin
 	{
 		ArrayList arrayListObject = new ArrayList();
 		arrayListObject = (ArrayList) details;
-		 Object statementObject=ModelAdmin.connection();
+		 Object statementObject=connection();
 		
 		((Statement) statementObject).execute("insert into ProductsDetails (Product_Name,Category_Name,Product_Description,Qty,Price) values ('"+arrayListObject.get(0).toString()+"','"+arrayListObject.get(1).toString()+"','"+arrayListObject.get(2).toString()+"',"+arrayListObject.get(3).toString()+","+arrayListObject.get(4).toString()+")");
 		return "product added successfully";	
@@ -31,7 +31,7 @@ public class ModelAdmin implements IModelAdmin
 	public String removefromtable(int S_No) throws SQLException
 	{
 		
-		 Object statementObject=ModelAdmin.connection();
+		 Object statementObject=connection();
 		
 		((Statement) statementObject).executeUpdate("delete from ProductsDetails where S_No="+S_No);
 		return "Product removed successfully";
