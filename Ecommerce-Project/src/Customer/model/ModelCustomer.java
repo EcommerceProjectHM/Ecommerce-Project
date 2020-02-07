@@ -34,7 +34,7 @@ public class ModelCustomer implements IModelCustomer
 				return "Only " + quantity + " are avilable";
 		} 
 		else
-			return  "Low balance "+(price-(givenPrice*quantity))+" amount needed";
+			return  "Low balance "+(price-(givenPrice*givenQuantity))+" amount needed";
 	}
 
 	public String addcart(int product_id, String Customer_name) throws SQLException 
