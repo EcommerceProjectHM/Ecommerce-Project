@@ -10,7 +10,6 @@ import Customer.model.ModelCustomer;
 import Customer.presenter.PresenterCustomer;
 import Customer.view.IViewCustomer;
 import Customer.view.ViewCustomer;
-
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -34,7 +33,7 @@ public class ModelLogin implements IModelLogin
 			return statementObject;
 		}
 		
-		//Login method to connect the sqlserver and get the datas
+		
 		public String login() throws SQLException
 		{
 			Statement statementObject1 = ModelLogin.connection();
