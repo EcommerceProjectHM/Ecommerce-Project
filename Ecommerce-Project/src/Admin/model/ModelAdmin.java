@@ -25,8 +25,6 @@ public class ModelAdmin implements IModelAdmin
 		Connection connectionObject = DriverManager.getConnection("jdbc:sqlserver://106.51.1.63; database = {fresher_ecom_task}","ecomfresher","Change@Fresher");
 		Statement statementObject = connectionObject.createStatement();
 		statementObject.executeUpdate("delete from ProductsDetails where S_No="+S_No);
-		return "Product removed successfully";
-		
-		
+		return "Product removed successfully";	
 	}
 }
