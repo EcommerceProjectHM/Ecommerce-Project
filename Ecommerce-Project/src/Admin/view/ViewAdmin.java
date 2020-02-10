@@ -54,8 +54,11 @@ public class ViewAdmin implements IViewAdmin
 	// add products
 	public void addproducts() throws SQLException
 	{
+		
+		@SuppressWarnings("resource")
 		Scanner scannerObject = new Scanner(System.in);
 		ArrayList<String> arrayListObject= new ArrayList<String>();
+		
 		
 		System.out.println("Enter the Product_Name");
 		arrayListObject.add(scannerObject.nextLine());
