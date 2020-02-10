@@ -17,7 +17,6 @@ public class ViewList implements IViewList
 	//from customer and admin
 	public int checkTheS_No() 
 	{
-		@SuppressWarnings("resource")
         Object scannerObject= ViewLogin.scannerObject();
 		System.out.println("Please enter the S_No if You want");
 		int number = ((Scanner) scannerObject).nextInt();
@@ -54,7 +53,6 @@ public class ViewList implements IViewList
 			System.out.println("-----------------------");
 
 			System.out.println("\nPlease select the S_No if you interest");
-			@SuppressWarnings("resource")
 	        Object scannerObject= ViewLogin.scannerObject();
 			int category = ((Scanner) scannerObject).nextInt();
 			

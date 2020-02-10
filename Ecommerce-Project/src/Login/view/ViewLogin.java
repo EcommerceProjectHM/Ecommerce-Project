@@ -36,8 +36,7 @@ public class ViewLogin implements IViewLogin
 	//Home page method to call sign in or sign up or account delete method
 	public void homepage()
 	{
-		@SuppressWarnings("resource")
-		         Object scannerObject= scannerObject();
+		Object scannerObject= scannerObject();
 		System.out.println("Home Page :");
 		System.out.println("Sign in Press ---> 1");
 		System.out.println("Sign Up Press ---> 2");
@@ -78,7 +77,6 @@ public class ViewLogin implements IViewLogin
 	public void userlogin() 
 	{
 		System.out.println("\nSign In Page :");
-		@SuppressWarnings("resource")
         Object scannerObject= scannerObject();
 
 		System.out.println("Enter Your Username :");
@@ -94,7 +92,6 @@ public class ViewLogin implements IViewLogin
 	public void signup() throws SQLException 
 	{
 		System.out.println("\nSign Up Page :");
-		@SuppressWarnings("resource")
         Object scannerObject= scannerObject();
 
 		System.out.println("Enter the Username :");
@@ -120,8 +117,7 @@ public class ViewLogin implements IViewLogin
 	public void delete_account() throws SQLException 
 	{
 		System.out.println("\nAccount Delete Page :");
-		@SuppressWarnings("resource")
-        Object scannerObject= scannerObject();
+        Object scannerObject = scannerObject();
 
 		System.out.println("Enter Your Username :");
 		String username = ((Scanner) scannerObject).nextLine();

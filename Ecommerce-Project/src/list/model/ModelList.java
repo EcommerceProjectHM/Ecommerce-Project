@@ -20,7 +20,7 @@ public class ModelList implements IModelList
 
 	 public Object productlist(String i) throws SQLException 
 	 {
-		 Statement statementObject1 = ModelLogin.connection();
+		Statement statementObject1 = ModelLogin.connection();
 		ResultSet resultSetObject = statementObject1.executeQuery("select * from ProductsDetails where Category_Name='"+i+"'");
 		return resultSetObject;
 	 }

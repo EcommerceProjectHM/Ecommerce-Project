@@ -31,7 +31,7 @@ public class ViewAdmin implements IViewAdmin
 
 		while(true)
 		{
-			System.out.println("       main menu");
+			System.out.println("Main Menu :");
 			System.out.println("Add products Press ---> 1");
 			System.out.println("Remove products Press ---> 2");
 			System.out.println("View products Press ---> 3");
