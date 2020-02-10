@@ -28,8 +28,7 @@ public class ViewCustomer implements IViewCustomer
 	
 	public int checkTheS_No() 
 	{
-		@SuppressWarnings("resource")
-        Object scannerObject= ViewLogin.scannerObject();
+        Object scannerObject = ViewLogin.scannerObject();
 		int number = ((Scanner) scannerObject).nextInt();
 		for (int i = 0; i < this.cartS_No.size(); i++) 
 		{
@@ -52,8 +51,7 @@ public class ViewCustomer implements IViewCustomer
 	
 	public void showdetails() throws SQLException
 	{
-		@SuppressWarnings("resource")
-        Object scannerObject= ViewLogin.scannerObject();
+        Object scannerObject = ViewLogin.scannerObject();
 		System.out.println("\nMain Menu :");
 		System.out.println("View product list Press ---> 1 \nView cart Press ---> 2 \nLogout Press ---> 3");
 		switch(((Scanner) scannerObject).nextInt())
@@ -73,8 +71,7 @@ public class ViewCustomer implements IViewCustomer
 	@SuppressWarnings("unchecked")
 	public void cartdetails() throws SQLException
 	{   
-		@SuppressWarnings("resource")
-        Object scannerObject= ViewLogin.scannerObject();
+        Object scannerObject = ViewLogin.scannerObject();
 		String customer = this.username;int S_No=0;
 		Object cart = presentercustomer.showcart(customer);
 		System.out.println("---------------------------------------------------------------------------");
@@ -130,7 +127,6 @@ public class ViewCustomer implements IViewCustomer
 		viewlist.setPresenter(new PresenterList(viewlist,new ModelList()));
 		
 		
-			@SuppressWarnings("resource")
 	        Object scannerObject= ViewLogin.scannerObject();
 			int product_id = viewlist.checkTheS_No();
 			
@@ -152,8 +148,7 @@ public class ViewCustomer implements IViewCustomer
 	
 	public  void buy(int product_Id) throws SQLException 
 	{
-		 @SuppressWarnings("resource")
-	        Object scannerObject= ViewLogin.scannerObject();
+	     Object scannerObject= ViewLogin.scannerObject();
 		 System.out.println("\nBuy Page :");
 		 System.out.println("Please enter the Quantity");
 		 int quantity = ((Scanner) scannerObject).nextInt();
@@ -172,12 +167,10 @@ public class ViewCustomer implements IViewCustomer
 		while(true)
 		{
 			System.out.println("\nIf you want to view \ncategoryList Press ---> 1 \nShow cart Press ---> 2 \nMain Menu Press ---> 3");
-		    @SuppressWarnings("resource")
-	        Object scannerObject= ViewLogin.scannerObject();
+	        Object scannerObject = ViewLogin.scannerObject();
 
 			switch(((Scanner) scannerObject).nextInt())
 			{
-				case 1: customer();break;
 				case 2: cartdetails();break;
 				case 3: showdetails();break;
 				default : System.out.println("\nPlease Enter Valid Number");

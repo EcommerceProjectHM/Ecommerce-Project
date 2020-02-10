@@ -23,7 +23,6 @@ public class ViewAdmin implements IViewAdmin
 		showdetails();
 	}
 	
-	@SuppressWarnings("resource")
 	
 	// show details
 	void showdetails() throws SQLException
@@ -32,7 +31,7 @@ public class ViewAdmin implements IViewAdmin
 
 		while(true)
 		{
-			System.out.println("       main menu");
+			System.out.println("Main Menu :");
 			System.out.println("Add products Press ---> 1");
 			System.out.println("Remove products Press ---> 2");
 			System.out.println("View products Press ---> 3");
@@ -84,10 +83,12 @@ public class ViewAdmin implements IViewAdmin
 		ArrayList<String> arrayListObject= new ArrayList<String>();
 		ArrayList category=categoryList();
 		System.out.println("category List");
-		for(int i=0,j=1;i<category.size();i++,j++)
+		while(true)
 		{
+			for(int i=0,j=1;i<category.size();i++,j++)
+			{
 			System.out.println(j+" "+category.get(i).toString());
-		}
+		    }
 		while(true) {
 		System.out.println("Please enter the category if you interest press 1 \nadd new category press 2 \nmain menu press 3");
 		int value=((Scanner) scannerObject).nextInt();
@@ -149,11 +150,10 @@ public class ViewAdmin implements IViewAdmin
 		default:
 			{System.out.println("Please enter the valid S_No");
 			continue;} 
-		}}
+		}}}
 		
 		}
 	public void removeproducts() throws SQLException
-	
 	{
 		while(true)
 		{
@@ -184,6 +184,7 @@ public class ViewAdmin implements IViewAdmin
         }
 		}
 	}
+	
 	public void viewproducts() throws SQLException
 	{
 		IViewList viewlist = new ViewList();
