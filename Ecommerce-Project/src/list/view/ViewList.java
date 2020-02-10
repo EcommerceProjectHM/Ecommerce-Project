@@ -43,13 +43,12 @@ public class ViewList implements IViewList
 			System.out.println("-----------------------");
 			System.out.println("S_No " + "Category_Name ");
 			System.out.println("-----------------------");
-
+			int j=1;
 			while (((ResultSet) categoryLostObject).next())
 			{
-				String S_No = ((ResultSet) categoryLostObject).getString("S_No");
 				String Category_Name = ((ResultSet) categoryLostObject).getString("Category_Name");
 				category_name.add(Category_Name);
-				System.out.println(S_No + "    " + Category_Name);
+				System.out.println(j + "    " + Category_Name);j++;
 			}
 			System.out.println("-----------------------");
 
