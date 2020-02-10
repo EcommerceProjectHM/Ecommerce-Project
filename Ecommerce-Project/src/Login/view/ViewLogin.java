@@ -36,6 +36,7 @@ public class ViewLogin implements IViewLogin
 	//Home page method to call sign in or sign up or account delete method
 	public void homepage()
 	{
+		try {
 		Object scannerObject= scannerObject();
 		System.out.println("Home Page :");
 		System.out.println("Sign in Press ---> 1");
@@ -69,6 +70,12 @@ public class ViewLogin implements IViewLogin
 						System.out.println("\nPlease Enter Valid Number");
 						homepage();
 					}
+		}
+	}
+		catch(Exception e) 
+		{
+		System.out.println("Enter the valid option");
+		homepage();
 		}
 	}
 
