@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Login.view.ViewLogin;
 import list.presenter.IPresenterList;
 
 public class ViewList implements IViewList 
@@ -17,9 +18,9 @@ public class ViewList implements IViewList
 	public int checkTheS_No() 
 	{
 		@SuppressWarnings("resource")
-		Scanner scannerObject = new Scanner(System.in);
+        Object scannerObject= ViewLogin.scannerObject();
 		System.out.println("Please enter the S_No if You want");
-		int number = scannerObject.nextInt();
+		int number = ((Scanner) scannerObject).nextInt();
 		for (int i = 0; i < this.productS_No.size(); i++) 
 		{
 			if (number == (int)Integer.parseInt(this.productS_No.get(i).toString()))
@@ -54,8 +55,8 @@ public class ViewList implements IViewList
 
 			System.out.println("\nPlease select the S_No if you interest");
 			@SuppressWarnings("resource")
-			Scanner scannerObject = new Scanner(System.in);
-			int category = scannerObject.nextInt();
+	        Object scannerObject= ViewLogin.scannerObject();
+			int category = ((Scanner) scannerObject).nextInt();
 			
 			int count = 0;
 			if (category_name.size() >= category && category > 0)

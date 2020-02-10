@@ -21,6 +21,11 @@ public class ViewLogin implements IViewLogin
 		//PresenterLogin class object Argument of view class object and ModelLogin class object
 		view.setPresenter(new PresenterLogin(view,new ModelLogin()));
 	}
+	public static Object  scannerObject()
+	{
+		Scanner scannerObject1= new Scanner(System.in);
+		 return scannerObject1;
+	}
 	
 	public void setPresenter(IPresenterLogin presenter) 
 	{
@@ -32,13 +37,13 @@ public class ViewLogin implements IViewLogin
 	public void homepage()
 	{
 		@SuppressWarnings("resource")
-		Scanner scannerObject1= new Scanner(System.in);
+		         Object scannerObject= scannerObject();
 		System.out.println("Home Page :");
 		System.out.println("Sign in Press ---> 1");
 		System.out.println("Sign Up Press ---> 2");
 		System.out.println("Account Delete Press ---> 3");
 		System.out.println("Exit Application Press ---> 4");
-		int option = scannerObject1.nextInt();
+		int option = ((Scanner) scannerObject).nextInt();
 
 		switch(option)
 		{
@@ -74,11 +79,12 @@ public class ViewLogin implements IViewLogin
 	{
 		System.out.println("\nSign In Page :");
 		@SuppressWarnings("resource")
-		Scanner scannerObject1 = new Scanner(System.in);
+        Object scannerObject= scannerObject();
+
 		System.out.println("Enter Your Username :");
-		String username = scannerObject1.nextLine();
+		String username = ((Scanner) scannerObject).nextLine();
 		System.out.println("Enter Your Password :");
-		String password = scannerObject1.nextLine();
+		String password = ((Scanner) scannerObject).nextLine();
 		
 		presenterlogin.pass(username,password);
 		presenterlogin.login();
@@ -89,11 +95,12 @@ public class ViewLogin implements IViewLogin
 	{
 		System.out.println("\nSign Up Page :");
 		@SuppressWarnings("resource")
-		Scanner scannerObject1 = new Scanner(System.in);
+        Object scannerObject= scannerObject();
+
 		System.out.println("Enter the Username :");
-		String username = scannerObject1.nextLine();
+		String username = ((Scanner) scannerObject).nextLine();
 		System.out.println("Enter the Password :");
-		String password = scannerObject1.nextLine();
+		String password = ((Scanner) scannerObject).nextLine();
 		
 		String output = presenterlogin.signup(username,password);
 		if("success".equals(output))
@@ -114,11 +121,12 @@ public class ViewLogin implements IViewLogin
 	{
 		System.out.println("\nAccount Delete Page :");
 		@SuppressWarnings("resource")
-		Scanner scannerObject1 = new Scanner(System.in);
+        Object scannerObject= scannerObject();
+
 		System.out.println("Enter Your Username :");
-		String username = scannerObject1.nextLine();
+		String username = ((Scanner) scannerObject).nextLine();
 		System.out.println("Enter Your Password :");
-		String password = scannerObject1.nextLine();
+		String password = ((Scanner) scannerObject).nextLine();
 		
 		String result = presenterlogin.delete_account(username,password);
 		if("true".equals(result))
