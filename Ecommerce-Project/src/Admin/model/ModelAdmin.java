@@ -22,7 +22,6 @@ public class ModelAdmin implements IModelAdmin
 	
 	public String removefromtable(int S_No) throws SQLException
 	{
-				
 		Statement statementObject1 = ModelLogin.connection();
 		statementObject1.executeUpdate("delete from ProductsDetails where S_No="+S_No);
 		return "Product removed successfully";		

@@ -17,7 +17,7 @@ public class ViewList implements IViewList
 	//from customer and admin
 	public int checkTheS_No() 
 	{
-        Object scannerObject= ViewLogin.scannerObject();
+        Object scannerObject = ViewLogin.scannerObject();
 		System.out.println("Please enter the S_No if You want");
 		int number = ((Scanner) scannerObject).nextInt();
 		for (int i = 0; i < this.productS_No.size(); i++) 
