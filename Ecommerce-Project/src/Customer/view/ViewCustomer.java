@@ -20,6 +20,7 @@ public class ViewCustomer implements IViewCustomer
 	private ArrayList cartS_No=new ArrayList();
 	private IPresenterCustomer presentercustomer; 
 	private String username;
+	private int number;
 	
 	public ViewCustomer(String username)
 	{
@@ -29,12 +30,12 @@ public class ViewCustomer implements IViewCustomer
 	public int checkTheS_No() 
 	{
         Object scannerObject = ViewLogin.scannerObject();
-		int number = ((Scanner) scannerObject).nextInt();
+		this.number = ((Scanner) scannerObject).nextInt();
 		for (int i = 0; i < this.cartS_No.size(); i++) 
 		{
 			if (number == (int)Integer.parseInt(this.cartS_No.get(i).toString()))
 			{
-				return number;
+				return this.number;
 				
 			}
 		}
@@ -89,6 +90,8 @@ public class ViewCustomer implements IViewCustomer
 		        System.out.println();
 		 }
 		 System.out.println("---------------------------------------------------------------------------");
+		 while(true)
+		 {
 		 System.out.println("\nRemove from cart Press ---> 1\nBuy Press ---> 2\nMain Menu Press ---> 3");
 		 
 		 switch(((Scanner) scannerObject).nextInt())
@@ -116,8 +119,11 @@ public class ViewCustomer implements IViewCustomer
 					 
 					 buy(S_No);break;
 					 }
+			  case 3: 
+					 showdetails();break;
+			  default :continue;
 		 }
-			 showdetails();
+	}  
 	}
 	
 	public  void customer() throws SQLException
