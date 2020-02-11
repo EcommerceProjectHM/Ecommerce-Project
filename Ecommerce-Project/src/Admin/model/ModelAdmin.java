@@ -28,11 +28,12 @@ public class ModelAdmin implements IModelAdmin
 		ArrayList category=new ArrayList();
 		Statement statementObject1 = ModelLogin.connection();
 		ResultSet resultSetObject = statementObject1.executeQuery("select * from Category_List");
-	while (resultSetObject.next())
-	{
-     category.add(resultSetObject.getString("category_name"));
-	}
-	return category;
+		
+		while (resultSetObject.next())
+		{
+	     category.add(resultSetObject.getString("category_name"));
+		}
+		return category;
 	}
 	@SuppressWarnings("rawtypes")
 	public String adddetails(Object details) throws SQLException

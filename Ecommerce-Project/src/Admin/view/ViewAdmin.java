@@ -31,7 +31,7 @@ public class ViewAdmin implements IViewAdmin
 
 		while(true)
 		{
-			System.out.println("Main Menu :");
+			System.out.println("\nMain Menu :");
 			System.out.println("Add products Press ---> 1");
 			System.out.println("Remove products Press ---> 2");
 			System.out.println("View products Press ---> 3");
@@ -82,59 +82,62 @@ public class ViewAdmin implements IViewAdmin
         int categoryListS_No=0;
 		ArrayList<String> arrayListObject= new ArrayList<String>();
 		ArrayList category=categoryList();
-		System.out.println("category List");
+		System.out.println("\ncategory List");
 		while(true)
 		{
 			for(int i=0,j=1;i<category.size();i++,j++)
 			{
-			System.out.println(j+" "+category.get(i).toString());
+				System.out.println(j+" "+category.get(i).toString());
 		    }
-		while(true) {
-		System.out.println("Please enter the category if you interest press 1 \nadd new category press 2 \nmain menu press 3");
-		int value=((Scanner) scannerObject).nextInt();
-		switch(value)
+		while(true) 
 		{
-		case 1:
-			System.out.println("please select the Category No if you interest");
-			categoryListS_No=((Scanner) scannerObject).nextInt();
-			 Object scannerObjectone= ViewLogin.scannerObject();
-				System.out.println("Enter the Product_Name");
-				arrayListObject.add(((Scanner) scannerObjectone).nextLine());
-				arrayListObject.add(category.get(categoryListS_No-1).toString());
-				System.out.println("Enter the Product_Description");
-				arrayListObject.add(((Scanner) scannerObjectone).nextLine());
-				System.out.println("Enter the Qty");
-				arrayListObject.add(isDigit());
-				System.out.println("Enter the price");
-				arrayListObject.add(isDigit());
-				boolean flag=true;
-				while(flag)
-				{
-				System.out.println("Please select option \nPrint Press ---> 1\nStore Press ---> 2 \nRe-enter Press ---> 3 \nMainmenu Press ---> 4 ");
-				int data = ((Scanner) scannerObject).nextInt();
-				switch(data)
-				{
-					case 1:
+			System.out.println("Please enter the category press ---> 1 \nAdd new category press ---> 2 \nMain menu press ---> 3");
+			int value=((Scanner) scannerObject).nextInt();
+			switch(value)
+			{
+			case 1:
+				System.out.println("please select the Category No if you interest");
+				categoryListS_No=((Scanner) scannerObject).nextInt();
+				 
+					Object scannerObjectone= ViewLogin.scannerObject();
+					System.out.println("Enter the Product_Name");
+					arrayListObject.add(((Scanner) scannerObjectone).nextLine());
+					arrayListObject.add(category.get(categoryListS_No-1).toString());
+					System.out.println("Enter the Product_Description");
+					arrayListObject.add(((Scanner) scannerObjectone).nextLine());
+					System.out.println("Enter the Qty");
+					arrayListObject.add(isDigit());
+					System.out.println("Enter the price");
+					arrayListObject.add(isDigit());
+					boolean flag=true;
+					
+					while(flag)
 					{
-					    System.out.println(arrayListObject);
-					    break;
-					}
-					case 2:
-						try 
+					System.out.println("Please select option \nPrint Press ---> 1\nStore Press ---> 2 \nRe-enter Press ---> 3 \nMainmenu Press ---> 4 ");
+					int data = ((Scanner) scannerObject).nextInt();
+					
+					switch(data)
+					{
+						case 1:
 						{
-								System.out.println(presenteradmin.addproducts(arrayListObject));
-						} 
-						catch (SQLException e) 
-						{
-							e.printStackTrace();	
+						    System.out.println(arrayListObject);
+						    break;
 						}
-						break;
-				    case 3:
-				    		arrayListObject.removeAll(arrayListObject);
-					    	addproducts();break;
-				    case 4:showdetails();	break;
-				    default: flag=true;
-				    
+						case 2:
+							try 
+							{
+									System.out.println(presenteradmin.addproducts(arrayListObject));
+							} 
+							catch (SQLException e) 
+							{
+								e.printStackTrace();	
+							}
+							break;
+					    case 3:
+					    		arrayListObject.removeAll(arrayListObject);
+						    	addproducts();break;
+					    case 4:showdetails();	break;
+					    default: flag=true;
 				}
 				flag=false;
 				}break;
@@ -157,7 +160,7 @@ public class ViewAdmin implements IViewAdmin
 	{
 		while(true)
 		{
-		System.out.println("Enter the option \nremove category press 1 \nremove product press 2 \nmainmenu press 3");
+		System.out.println("\nEnter the options: \nRemove category press ---> 1 \nRemove product press ---> 2 \nMain menu press ---> 3");
 		 Object scannerObject= ViewLogin.scannerObject();
 		switch(((Scanner) scannerObject).nextInt())
         {
@@ -165,11 +168,12 @@ public class ViewAdmin implements IViewAdmin
         		int categoryListS_No=0;
         		ArrayList<String> arrayListObject= new ArrayList<String>();
         		ArrayList category=categoryList();
-        		System.out.println("category List");
+        		System.out.println("\ncategory List");
         		for(int i=0,j=1;i<category.size();i++,j++)
         		{
         			System.out.println(j+" "+category.get(i).toString());
         		}
+        		System.out.println("\nPlease Enter remove category no:");
         		categoryListS_No=((Scanner) scannerObject).nextInt();
         		System.out.println(presenteradmin.removecategory(category.get(categoryListS_No-1).toString()));
         		break;
